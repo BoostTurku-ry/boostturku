@@ -1,26 +1,137 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+/* `dark:` utilities follow <html data-theme="dark"> (set by the theme toggle). */
+@custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+/* ------------------------------------------------------------------
+   Boost Turku design tokens
+   Minimal and editorial: off-white, ink, one accent (Boost red).
+   The community comes through in the photography, not decoration.
+   Every token is redefined for dark mode below.
+   ------------------------------------------------------------------ */
+@theme {
+  --color-boost: #c52127;
+  --color-boost-dark: #a11b20;
+  --color-boost-soft: #fbeaea;
+  --color-ink: #141314; /* main text — flips to light in dark mode */
+  --color-ink-soft: #57524f;
+  --color-ink-muted: #8a8480;
+  --color-paper: #faf8f5; /* page background */
+  --color-surface: #ffffff; /* cards, raised areas */
+  --color-line: #e7e2dc; /* hairline borders */
+  --color-night: #141314; /* always-dark sections (impact, join, footer) */
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+  --radius-card: 1rem;
+
+  --animate-scroll-cue: scroll-cue 2.2s cubic-bezier(0.65, 0, 0.35, 1) infinite;
+
+  @keyframes scroll-cue {
+    0% {
+      transform: scaleY(0);
+      transform-origin: top;
+    }
+    45% {
+      transform: scaleY(1);
+      transform-origin: top;
+    }
+    55% {
+      transform: scaleY(1);
+      transform-origin: bottom;
+    }
+    100% {
+      transform: scaleY(0);
+      transform-origin: bottom;
+    }
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+[data-theme="dark"] {
+  --color-boost: #e0373d;
+  --color-boost-dark: #c52127;
+  --color-boost-soft: #3a1719;
+  --color-ink: #f1ede8;
+  --color-ink-soft: #b5aea7;
+  --color-ink-muted: #857e78;
+  --color-paper: #121110;
+  --color-surface: #1b1918;
+  --color-line: #2d2a28;
+  --color-night: #0a0909;
+}
+
+:root {
+  color-scheme: light;
+}
+[data-theme="dark"] {
+  color-scheme: dark;
+}
+
+/* Applied for one frame while switching theme so every colour changes instantly
+   (elements with their own transitions would otherwise lag behind). */
+.theme-switching,
+.theme-switching *:not(.theme-icon),
+.theme-switching *::before,
+.theme-switching *::after {
+  transition: none !important;
+}
+
+@theme inline {
+  --font-display: var(--font-axis), "Arial Black", system-ui, sans-serif;
+  --font-sans: var(--font-dm-sans), system-ui, sans-serif;
+  --font-mono: var(--font-geist-mono), ui-monospace, monospace;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: var(--color-paper);
+    color: var(--color-ink);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  ::selection {
+    background-color: var(--color-boost);
+    color: white;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-boost);
+    outline-offset: 3px;
+    border-radius: 6px;
+  }
+}
+
+@layer utilities {
+  /* Brand moments only: hero headline, big numbers. Axis is a caps-only face. */
+  .heading-display {
+    font-family: var(--font-display);
+    letter-spacing: -0.02em;
+    line-height: 1.02;
+  }
+
+  /* Editorial micro-labels: indices, dates, meta. */
+  .label-mono {
+    font-family: var(--font-mono);
+    font-size: 0.6875rem;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  /* Section and card headings: calm, sentence-case sans. */
+  .heading {
+    font-family: var(--font-sans);
+    font-weight: 600;
+    letter-spacing: -0.03em;
+    line-height: 1.08;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
 }
