@@ -6,9 +6,9 @@ import RotatingText from "@/components/reactbits/RotatingText";
 import { Badge } from "@/components/ui/Badge";
 import { ButtonLink } from "@/components/ui/Button";
 import { Container } from "@/components/ui/Container";
-import { featuredEvents } from "@/content/events";
 import { hero } from "@/content/home";
-import { formatEventDate } from "@/lib/dates";
+import { formatDateTime } from "@/lib/dates";
+import type { LumaEvent } from "@/lib/luma";
 import { HeroPhotoStack } from "./HeroPhotoStack";
 
 /**
@@ -16,14 +16,13 @@ import { HeroPhotoStack } from "./HeroPhotoStack";
  * very faint film grain behind the content. Type and photo sizes
  * scale with viewport height so everything fits on one desktop screen.
  */
-export function HeroSection() {
-  const nextEvent = featuredEvents[0];
-  const nextDate = nextEvent ? formatEventDate(nextEvent.date) : null;
+export function HeroSection({ nextEvent }: { nextEvent?: LumaEvent }) {
+  const nextDate = nextEvent ? formatDateTime(nextEvent.start) : null;
 
   return (
     <section className="relative isolate overflow-hidden">
       {/* Very faint, slow film grain — atmosphere without competing with the copy. */}
-      <Noise opacity={0.04} fps={8} blendMode="overlay" contrast={0.5} zIndex={-1} />
+      <Noise opacity={0.04} fps={8} blendMode="overlay" contrast={0.5} zIndex={-1} style={{ maskImage: "linear-gradient(to bottom, #000 55%, transparent)", WebkitMaskImage: "linear-gradient(to bottom, #000 55%, transparent)" }} />
       {/* soft fade into the next section */}
       <div aria-hidden className="pointer-events-none absolute inset-x-0 bottom-0 -z-10 h-32 bg-linear-to-b from-transparent to-paper" />
 
@@ -86,7 +85,7 @@ export function HeroSection() {
                 </ButtonLink>
               </div>
 
-              <dl className="mt-10 grid max-w-md grid-cols-3 divide-x divide-line border-t border-line pt-5">
+              <dl className="mt-10 grid max-w-sm grid-cols-2 divide-x divide-line border-t border-line pt-5">
                 {hero.highlights.map((item) => (
                   <div key={item.label} className="px-4 first:pl-0">
                     <dt className="sr-only">{item.label}</dt>
@@ -117,7 +116,7 @@ export function HeroSection() {
                     <span className="heading-display text-xl leading-none">{nextDate.day}</span>
                   </span>
                   <span className="min-w-0">
-                    <span className="label-mono block text-ink-muted">Next event · {nextEvent.time}</span>
+                    <span className="label-mono block text-ink-muted">Next event · {nextDate.time}</span>
                     <span className="mt-0.5 block truncate text-sm font-semibold text-ink group-hover:text-boost">
                       {nextEvent.title}
                     </span>

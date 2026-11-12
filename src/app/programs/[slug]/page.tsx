@@ -1,0 +1,71 @@
+import type { Metadata } from "next";
+import Link from "next/link";
+import { notFound } from "next/navigation";
+import { ProgramDetailSections } from "@/components/sections/programs/ProgramDetailSections";
+import { FaqSection } from "@/components/sections/shared/FaqSection";
+import { JoinSection } from "@/components/sections/shared/JoinSection";
+import { PageHero } from "@/components/sections/shared/PageHero";
+import { ButtonLink } from "@/components/ui/Button";
+import { StatusPill } from "@/components/ui/StatusPill";
+import { getProgram, programDetails } from "@/content/programs";
+import { site } from "@/content/site";
+
+export function generateStaticParams() {
+  return programDetails.map((p) => ({ slug: p.slug }));
+}
+
+export async function generateMetadata({ params }: PageProps<"/programs/[slug]">): Promise<Metadata> {
+  const program = getProgram((await params).slug);
+  return program ? { title: program.name, description: program.summary } : {};
+}
+
+export default async function ProgramPage({ params }: PageProps<"/programs/[slug]">) {
+  const program = getProgram((await params).slug);
+  if (!program) notFound();
+
+  const telegram = site.socials.find((s) => s.label === "Telegram")!;
+
+  return (
+    <>
+      <PageHero
+        eyebrow={`Programs · ${program.tagline}`}
+        meta={
+          <Link href="/programs" className="hover:text-ink">
+            ← All programs
+          </Link>
+        }
+        title={program.name}
+        intro={program.summary}
+        actions={
+          <>
+            <StatusPill label={program.status.label} tone={program.status.tone} className="w-full justify-center sm:w-auto" />
+            {program.primaryCta ? (
+              <ButtonLink href={program.primaryCta.href} arrow>
+                {program.primaryCta.label}
+              </ButtonLink>
+            ) : (
+              <ButtonLink href={telegram.href} variant="outline">
+                Get notified on Telegram
+              </ButtonLink>
+            )}
+          </>
+        }
+        photo={program.photo}
+      >
+        <dl className="grid grid-cols-2 gap-px overflow-hidden rounded-3xl border border-line bg-line lg:grid-cols-4">
+          {program.facts.map((fact) => (
+            <div key={fact.label} className="bg-surface p-6">
+              <dt className="label-mono text-ink-muted">{fact.label}</dt>
+              <dd className="mt-2 font-semibold text-ink">{fact.value}</dd>
+            </div>
+          ))}
+        </dl>
+      </PageHero>
+
+      <ProgramDetailSections program={program} />
+
+      {program.faq && <FaqSection items={program.faq} />}
+      <JoinSection />
+    </>
+  );
+}

@@ -35,3 +35,21 @@ export const mainNav: NavLink[] = [
   { label: "Stories", href: "/blog" },
   { label: "BoostHer", href: "https://boosther.boostturku.com", external: true },
 ];
+
+export const footerNav: NavLink[] = [
+  { label: "About", href: "/about" },
+  { label: "Programs", href: "/programs" },
+  { label: "Events", href: "/events" },
+  { label: "Alumni", href: "/alumni" },
+  { label: "Stories", href: "/blog" },
+  { label: "Get involved", href: "/get-involved" },
+  { label: "Contact", href: "/contact" },
+];
+
+/** Named contacts shown on the contact page. */
+export const contacts = [
+  { topic: "General questions", name: "Boost Turku", email: "info@boostturku.com" },
+  { topic: "Programs and coaching", name: "Lauri Koittola, Executive Director", email: "lauri@boostturku.com" },
+  { topic: "Proof of Concept grant", name: "Heta Lääkkö, President", email: "heta@boostturku.com" },
+  { topic: "BoostHer", name: "Wilma Tiainen, BoostHer lead", email: "wilma@boostturku.com" },
+];

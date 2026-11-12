@@ -15,7 +15,6 @@ export const hero = {
   highlights: [
     { value: "476", label: "alumni" },
     { value: "176", label: "companies founded" },
-    { value: "€0", label: "always free" },
   ],
   meta: {
     place: "Turku, Finland",

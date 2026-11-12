@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { BoostLogo } from "@/components/brand/BoostLogo";
 import { Container } from "@/components/ui/Container";
-import { mainNav, site } from "@/content/site";
+import { footerNav, site } from "@/content/site";
 
 export function SiteFooter() {
   return (
@@ -23,7 +23,7 @@ export function SiteFooter() {
           </div>
 
           <FooterColumn title="Explore">
-            {mainNav.map((item) => (
+            {footerNav.map((item) => (
               <li key={item.href}>
                 <Link href={item.href} className="text-white/65 hover:text-white">
                   {item.label}

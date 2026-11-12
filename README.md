@@ -28,11 +28,14 @@ src/
 │   ├── layout/             SiteHeader, SiteFooter
 │   ├── motion/             Our own small animation helpers (Reveal…)
 │   ├── reactbits/          Third-party React Bits components (vendored, see its README)
-│   ├── sections/<page>/    Page sections, grouped by the page they belong to
+│   ├── sections/<page>/    Page sections, grouped by page (home, about, alumni, blog, programs, forms)
+│   ├── sections/shared/    Sections used on several pages (PageHero, FAQ, Join, EventCard…)
 │   └── ui/                 Reusable primitives: Button, Badge, Container, Photo, SectionHeading
 ├── content/                All copy and data, typed. No JSX here.
+│   ├── posts/              Stories as Markdown (103 posts imported from the old site)
+│   └── events-snapshot.json  Fallback archive if lu.ma is unreachable
 ├── hooks/                  Reusable React hooks (useMediaQuery…)
-├── lib/                    Framework-free helpers (cn, dates, theme…)
+├── lib/                    Helpers: posts (Markdown), luma (live events), forms (server actions), dates, theme
 ├── styles/                 Font setup
 └── assets/fonts/           Self-hosted font files (Axis)
 public/images/
@@ -73,13 +76,15 @@ Professional and minimal, with a community feel that comes from the photography 
 
 The text, photos and history behind this site come from the knowledgebase in `../knowledgebase` (outside this repo): a full scrape of the old site, the lu.ma events archive and outside sources.
 
+## Data sources
+
+- **Events** come live from the public lu.ma calendar (`src/lib/luma.ts`) and are cached for an hour. If lu.ma can't be reached, the archive falls back to `events-snapshot.json`, and upcoming events show a link to lu.ma rather than claiming nothing is scheduled.
+- **Stories** are Markdown files in `src/content/posts/`. Add a post by adding a file with the same frontmatter fields; images go in `public/images/blog/`.
+- **Programs, board, partners and alumni** are typed data in `src/content/`. Update program `status` and dates each season.
+
 ## Status
 
-- [x] Design foundation, layout shell, home page
-- [ ] About (story, board, partners)
-- [ ] Programs index and detail pages (Startup Journey, Startup Marathon, OmaHomma, PoC Grant)
-- [ ] Events (live from the lu.ma API)
-- [ ] Alumni
-- [ ] Stories / blog (migrate 103 posts)
-- [ ] Get involved (membership form)
-- [ ] Contact
+- [x] Home, About, Programs (+ Startup Journey, Startup Marathon, OmaHomma, PoC Grant), Events, Alumni, Stories (+ 103 posts), Get involved, Contact, 404, sitemap
+- [ ] **Forms aren't connected yet.** Membership and contact submissions are validated but only logged on the server (`src/lib/forms.ts`, see `TODO(boost)`). Connect them to email or a sheet before launch.
+- [ ] Program application links for the next round (add `primaryCta` in `src/content/programs.ts` when applications open)
+- [ ] BoostHer pages (currently links to boosther.boostturku.com)

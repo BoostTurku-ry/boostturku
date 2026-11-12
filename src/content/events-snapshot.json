@@ -1,0 +1,507 @@
+{
+ "note": "Snapshot of lu.ma/boost past events (Nov 2026). Used only when the lu.ma API is unreachable.",
+ "past": [
+  {
+   "guest_count": 54,
+   "event": {
+    "api_id": "evt-Y7eVityqBMEGWSG",
+    "name": "Female Founder Night 11.11.2026",
+    "start_at": "2026-11-11T16:00:00.000Z",
+    "end_at": "2026-11-11T19:00:00.000Z",
+    "url": "k2j5da0q",
+    "cover_url": "https://images.lumacdn.com/uploads/dj/8a6187f4-7560-4ece-928a-2130a4fc0bf8.png",
+    "geo_address_info": {
+     "address": "Fredrik & Doris"
+    }
+   }
+  },
+  {
+   "guest_count": 24,
+   "event": {
+    "api_id": "evt-FQ92djmtxXvjjJf",
+    "name": "Pre-Incubator: Validating and Finding Ideas With Design Thinking (Dominik Kaps)",
+    "start_at": "2026-11-09T15:30:00.000Z",
+    "end_at": "2026-11-09T17:30:00.000Z",
+    "url": "cl3ggqzn",
+    "cover_url": "https://images.lumacdn.com/uploads/6k/6144bb34-331a-4b92-a5cd-e74636733826.jpg",
+    "geo_address_info": {
+     "address": "Joukahaisenkatu 7"
+    }
+   }
+  },
+  {
+   "guest_count": 47,
+   "event": {
+    "api_id": "evt-It3LP12q1NtN5HE",
+    "name": "Pre-Incubator: How To Get Into Y Combinator? (Leo Kankkunen)",
+    "start_at": "2026-11-02T15:00:00.000Z",
+    "end_at": "2026-11-02T16:30:00.000Z",
+    "url": "bb2h40bk",
+    "cover_url": "https://images.lumacdn.com/uploads/kw/ac8b6aa5-e808-4b1c-b717-c28bcb5516e3.jpg",
+    "geo_address_info": null
+   }
+  },
+  {
+   "guest_count": 44,
+   "event": {
+    "api_id": "evt-3JjpWIsUuph8bWt",
+    "name": "Run, refuel & connect",
+    "start_at": "2026-10-30T05:30:00.000Z",
+    "end_at": "2026-10-30T08:30:00.000Z",
+    "url": "qzo6adj3",
+    "cover_url": "https://images.lumacdn.com/uploads/bg/96b30e54-c678-47a6-9fdc-7889fe216061.png",
+    "geo_address_info": {
+     "address": "Turku Cathedral"
+    }
+   }
+  },
+  {
+   "guest_count": 44,
+   "event": {
+    "api_id": "evt-3bdOCK3ivzDcPmh",
+    "name": "Pre-incubator: How to find my unicorn idea? (Ismail Vohra)",
+    "start_at": "2026-10-28T15:00:00.000Z",
+    "end_at": "2026-10-28T17:00:00.000Z",
+    "url": "4l2m6nj1",
+    "cover_url": "https://images.lumacdn.com/uploads/8t/a64ef77f-5327-4175-b271-6d2ff4a4fa87.jpg",
+    "geo_address_info": {
+     "address": "Joukahaisenkatu 7"
+    }
+   }
+  },
+  {
+   "guest_count": 18,
+   "event": {
+    "api_id": "evt-VDIUPMZnUBCcsB0",
+    "name": "Find a Startup Co-founder",
+    "start_at": "2026-10-27T14:30:00.000Z",
+    "end_at": "2026-10-27T17:00:00.000Z",
+    "url": "1w5hd6w3",
+    "cover_url": "https://images.lumacdn.com/uploads/3b/f65bbdc1-67a4-423e-bb3b-f0ea0e343ef5.png",
+    "geo_address_info": {
+     "address": "Turku Startup Hub"
+    }
+   }
+  },
+  {
+   "guest_count": 53,
+   "event": {
+    "api_id": "evt-T9pwbzSB8msIMyb",
+    "name": "Vibe Coding w/ Heidi Suutari + Lovable!",
+    "start_at": "2026-10-23T13:00:00.000Z",
+    "end_at": "2026-10-23T16:00:00.000Z",
+    "url": "b5rbdmns",
+    "cover_url": "https://images.lumacdn.com/uploads/du/ac851f02-d272-4c78-ac69-6005727e4acc.png",
+    "geo_address_info": {
+     "address": "Astra"
+    }
+   }
+  },
+  {
+   "guest_count": 23,
+   "event": {
+    "api_id": "evt-gUOWrW80BhGSK04",
+    "name": "Chairperson Election",
+    "start_at": "2026-10-22T14:00:00.000Z",
+    "end_at": "2026-10-22T16:00:00.000Z",
+    "url": "bw6hcuf4",
+    "cover_url": "https://images.lumacdn.com/uploads/35/996970f5-fa29-4a93-869e-687fc58da37e.jpg",
+    "geo_address_info": {
+     "address": "Hämeenkatu 9"
+    }
+   }
+  },
+  {
+   "guest_count": 4,
+   "event": {
+    "api_id": "evt-2uky6dECFzUPAri",
+    "name": "Founder Roundtable",
+    "start_at": "2026-10-19T14:00:00.000Z",
+    "end_at": "2026-10-19T16:00:00.000Z",
+    "url": "e62l77j7",
+    "cover_url": "https://images.lumacdn.com/uploads/m7/ecf09acc-9e9b-4e86-9516-242cc2f6fa6a.png",
+    "geo_address_info": {
+     "address": "Turku Startup Hub"
+    }
+   }
+  },
+  {
+   "guest_count": 48,
+   "event": {
+    "api_id": "evt-ikDb15xPvgNXuLl",
+    "name": "Community Breakfast with DASH",
+    "start_at": "2026-10-16T06:00:00.000Z",
+    "end_at": "2026-10-16T08:00:00.000Z",
+    "url": "u7db8ifw",
+    "cover_url": "https://images.lumacdn.com/uploads/nm/98d8c2ae-7cad-4b4c-8ea4-027541efd0f7.png",
+    "geo_address_info": {
+     "address": "Hämeenkatu 9"
+    }
+   }
+  },
+  {
+   "guest_count": 83,
+   "event": {
+    "api_id": "evt-fCdollUnEhIXqWh",
+    "name": "BoostHer birthday party",
+    "start_at": "2026-10-10T14:00:00.000Z",
+    "end_at": "2026-10-10T18:00:00.000Z",
+    "url": "u6niy1xj",
+    "cover_url": "https://images.lumacdn.com/uploads/x4/7b936010-c097-4bf7-88e3-893960a902a4.png",
+    "geo_address_info": {
+     "address": "Axelia"
+    }
+   }
+  },
+  {
+   "guest_count": 8,
+   "event": {
+    "api_id": "evt-YrWVJlj6SKqEtuH",
+    "name": "Boost weekly meeting: open for all",
+    "start_at": "2026-10-07T14:00:00.000Z",
+    "end_at": "2026-10-07T16:00:00.000Z",
+    "url": "i9xlnvht",
+    "cover_url": "https://images.lumacdn.com/uploads/qx/1bd27b8d-e414-444c-be04-90d8f9c864b0.png",
+    "geo_address_info": {
+     "address": "Hämeenkatu 9"
+    }
+   }
+  },
+  {
+   "guest_count": 61,
+   "event": {
+    "api_id": "evt-x0STDMDo080pbX9",
+    "name": "AI Workshop",
+    "start_at": "2026-10-06T13:00:00.000Z",
+    "end_at": "2026-10-06T16:00:00.000Z",
+    "url": "1k2v2hus",
+    "cover_url": "https://images.lumacdn.com/uploads/hi/6f583a8c-e9e0-4abd-863b-8b2151091ec8.jpg",
+    "geo_address_info": {
+     "address": "Hämeenkatu 9"
+    }
+   }
+  },
+  {
+   "guest_count": 9,
+   "event": {
+    "api_id": "evt-OYql3GF2F9a5aDY",
+    "name": "Stretch & Grow",
+    "start_at": "2026-10-06T08:00:00.000Z",
+    "end_at": "2026-10-06T10:00:00.000Z",
+    "url": "cbcvizad",
+    "cover_url": "https://images.lumacdn.com/uploads/63/59a3c95b-5afb-48c3-a02f-dc56b31f6977.jpg",
+    "geo_address_info": {
+     "address": "Sport Sirkka"
+    }
+   }
+  },
+  {
+   "guest_count": 27,
+   "event": {
+    "api_id": "evt-kDTV6YRcikIhsVF",
+    "name": "Community Breakfast - Tinker's Garage x Deep Dive",
+    "start_at": "2026-10-02T06:00:00.000Z",
+    "end_at": "2026-10-02T08:00:00.000Z",
+    "url": "bk67jhkc",
+    "cover_url": "https://images.lumacdn.com/uploads/pt/1f15d796-2477-465d-b9bf-d13c6e4ab73d.png",
+    "geo_address_info": {
+     "address": "Hämeenkatu 9"
+    }
+   }
+  },
+  {
+   "guest_count": 12,
+   "event": {
+    "api_id": "evt-lSyiK8IBF7p7HJY",
+    "name": "Business Funding Workshop",
+    "start_at": "2026-09-22T14:00:00.000Z",
+    "end_at": "2026-09-22T16:00:00.000Z",
+    "url": "ckp70b04",
+    "cover_url": "https://images.lumacdn.com/uploads/cb/6bc88138-8e0b-4411-9c8e-aa574d39a4cb.png",
+    "geo_address_info": {
+     "address": "Hämeenkatu 9"
+    }
+   }
+  },
+  {
+   "guest_count": 29,
+   "event": {
+    "api_id": "evt-471hICsgVEl30VA",
+    "name": "Boost x ÅAES: VC-case w/ Redtone VC and Monttu Ventures",
+    "start_at": "2026-09-21T14:00:00.000Z",
+    "end_at": "2026-09-21T16:00:00.000Z",
+    "url": "0rqlgfrz",
+    "cover_url": "https://images.lumacdn.com/uploads/l5/571cfaa0-7c53-44d8-9050-0de2915e4500.png",
+    "geo_address_info": {
+     "address": "Astra"
+    }
+   }
+  },
+  {
+   "guest_count": 22,
+   "event": {
+    "api_id": "evt-Su8BBwAu04JkF3V",
+    "name": "Community Breakfast w ÅA & Varha",
+    "start_at": "2026-09-18T06:00:00.000Z",
+    "end_at": "2026-09-18T08:00:00.000Z",
+    "url": "zjcm1kwk",
+    "cover_url": "https://images.lumacdn.com/uploads/1p/73226aa1-1f95-4a37-bdb1-4a486720b4fa.jpg",
+    "geo_address_info": {
+     "address": "Hämeenkatu 9"
+    }
+   }
+  },
+  {
+   "guest_count": 113,
+   "event": {
+    "api_id": "evt-NYXFUQlKO4E4VLY",
+    "name": "Brunch & Panel - Leadership & Growth",
+    "start_at": "2026-09-15T06:00:00.000Z",
+    "end_at": "2026-09-15T09:00:00.000Z",
+    "url": "hq04yrin",
+    "cover_url": "https://images.lumacdn.com/uploads/0b/f38b4077-44dd-4e9c-868c-640b9f6dca12.png",
+    "geo_address_info": {
+     "address": "EduCity"
+    }
+   }
+  },
+  {
+   "guest_count": 161,
+   "event": {
+    "api_id": "evt-jXzweEuOrSnhlli",
+    "name": "Fall Kickoff Party",
+    "start_at": "2026-09-10T14:00:00.000Z",
+    "end_at": "2026-09-10T19:00:00.000Z",
+    "url": "vue28xk2",
+    "cover_url": "https://images.lumacdn.com/uploads/4t/bcbbd7c1-f904-4ebe-a03f-fa5a0c08a06a.png",
+    "geo_address_info": {
+     "address": "Manillan tehdas"
+    }
+   }
+  },
+  {
+   "guest_count": 15,
+   "event": {
+    "api_id": "evt-9NKAJBBNNL3eOL9",
+    "name": "get together SLUSH apply for a volunteer",
+    "start_at": "2026-08-28T15:00:00.000Z",
+    "end_at": "2026-08-28T16:00:00.000Z",
+    "url": "8lwzfrfw",
+    "cover_url": "https://images.lumacdn.com/uploads/e2/cc30781d-469b-4fc6-9a5d-936f26d95b4d.jpg",
+    "geo_address_info": {
+     "address": "Hämeenkatu 9"
+    }
+   }
+  },
+  {
+   "guest_count": 169,
+   "event": {
+    "api_id": "evt-ELyWgCSVCBxEZQe",
+    "name": "Demoday",
+    "start_at": "2026-08-13T14:00:00.000Z",
+    "end_at": "2026-08-13T21:00:00.000Z",
+    "url": "ux3kxki5",
+    "cover_url": "https://images.lumacdn.com/uploads/xd/877a014f-3b27-4049-80bf-7471cbbea8e2.jpg",
+    "geo_address_info": {
+     "address": "Visitor and Innovation Centre Joki"
+    }
+   }
+  },
+  {
+   "guest_count": 9,
+   "event": {
+    "api_id": "evt-kSJ3u4Fo1JhduI9",
+    "name": "Find a Startup Co-founder",
+    "start_at": "2026-06-17T13:00:00.000Z",
+    "end_at": "2026-06-17T15:00:00.000Z",
+    "url": "z35zp701",
+    "cover_url": "https://images.lumacdn.com/uploads/4u/9b1854a2-1c77-4b61-b6e5-176cf8d11584.png",
+    "geo_address_info": {
+     "address": "Business Turku"
+    }
+   }
+  },
+  {
+   "guest_count": 5,
+   "event": {
+    "api_id": "evt-oQnpEDtclgiimPB",
+    "name": "Founder Roundtable",
+    "start_at": "2026-06-16T13:00:00.000Z",
+    "end_at": "2026-06-16T15:00:00.000Z",
+    "url": "dsw4qwu8",
+    "cover_url": "https://images.lumacdn.com/uploads/o2/1700b99f-957d-4243-9323-a81b656cd4e8.png",
+    "geo_address_info": {
+     "address": "Business Turku"
+    }
+   }
+  },
+  {
+   "guest_count": 14,
+   "event": {
+    "api_id": "evt-701pPp1MjQp0zkx",
+    "name": "Builder's Challenge DEMO DAY!",
+    "start_at": "2026-05-29T12:00:00.000Z",
+    "end_at": "2026-05-29T17:00:00.000Z",
+    "url": "b8omy1tm",
+    "cover_url": "https://images.lumacdn.com/uploads/ux/253b08b7-6eaa-4d63-9c7e-962d6a48ec92.png",
+    "geo_address_info": {
+     "address": "EduCity"
+    }
+   }
+  },
+  {
+   "guest_count": 5,
+   "event": {
+    "api_id": "evt-UUHsMzPrGRTkEEE",
+    "name": "Builder's Challenge Series: Session 6: Pitching Workshop with Aschwin Van der Woude",
+    "start_at": "2026-05-26T12:00:00.000Z",
+    "end_at": "2026-05-26T15:00:00.000Z",
+    "url": "1ntg62nh",
+    "cover_url": "https://images.lumacdn.com/uploads/1c/67bdb837-cfad-43fe-a110-32541663d240.png",
+    "geo_address_info": {
+     "address": "EduCity"
+    }
+   }
+  },
+  {
+   "guest_count": 39,
+   "event": {
+    "api_id": "evt-l8TelM7qneniDic",
+    "name": "Northern Skies - Lift off to Turku!",
+    "start_at": "2026-05-25T14:30:00.000Z",
+    "end_at": "2026-05-25T17:00:00.000Z",
+    "url": "ueym0i6r",
+    "cover_url": "https://images.lumacdn.com/uploads/ie/ea2364eb-12db-43d0-b6a4-08492b536021.png",
+    "geo_address_info": {
+     "address": "EduCity"
+    }
+   }
+  },
+  {
+   "guest_count": 21,
+   "event": {
+    "api_id": "evt-9d96O2XInocWmtf",
+    "name": "Cold Calling with Jessi Wright!",
+    "start_at": "2026-05-25T12:00:00.000Z",
+    "end_at": "2026-05-25T14:00:00.000Z",
+    "url": "qqbic5xf",
+    "cover_url": "https://images.lumacdn.com/uploads/br/90665b81-6ce9-4d62-8430-34854124d368.png",
+    "geo_address_info": {
+     "address": "Hämeenkatu 9"
+    }
+   }
+  },
+  {
+   "guest_count": 14,
+   "event": {
+    "api_id": "evt-aMsdEP7MLZDhyjV",
+    "name": "Builder's Challenge Series: Session 5: 3D Printing & UTU QTT Lab Visit",
+    "start_at": "2026-05-21T12:00:00.000Z",
+    "end_at": "2026-05-21T14:00:00.000Z",
+    "url": "wsofmkxr",
+    "cover_url": "https://images.lumacdn.com/uploads/0b/9ee38292-a651-429a-9035-84b6eed36170.png",
+    "geo_address_info": {
+     "address": "Turku Design Studio (University of Turku, Faculty of Technology)"
+    }
+   }
+  },
+  {
+   "guest_count": 17,
+   "event": {
+    "api_id": "evt-fuiVjl6mjIcrIPQ",
+    "name": "Builder's Challenge Series: Session 4: Litegrav talks on prototyping pathway with Patrik Hollós",
+    "start_at": "2026-05-20T12:00:00.000Z",
+    "end_at": "2026-05-20T15:00:00.000Z",
+    "url": "em3r27it",
+    "cover_url": "https://images.lumacdn.com/uploads/x1/3319a641-3df8-4c46-9993-464ad36b70b5.png",
+    "geo_address_info": {
+     "address": "EduCity"
+    }
+   }
+  },
+  {
+   "guest_count": 20,
+   "event": {
+    "api_id": "evt-rC9NdOg9oVfKAGg",
+    "name": "Didn't get a summer job? We can help! TYY x Boost",
+    "start_at": "2026-05-19T12:00:00.000Z",
+    "end_at": "2026-05-19T14:00:00.000Z",
+    "url": "jyoykd87",
+    "cover_url": "https://images.lumacdn.com/event-covers/n0/0c90c1df-d71b-4ed4-ad3a-809a69649562.png",
+    "geo_address_info": {
+     "address": "Rehtorinpellonkatu 4"
+    }
+   }
+  },
+  {
+   "guest_count": 36,
+   "event": {
+    "api_id": "evt-D09xZPoY7ZKNaYw",
+    "name": "Find a Startup Co-founder",
+    "start_at": "2026-05-18T13:30:00.000Z",
+    "end_at": "2026-05-18T15:30:00.000Z",
+    "url": "sl52a064",
+    "cover_url": "https://images.lumacdn.com/event-covers/dw/e41ef9bb-6562-4d07-9ca9-f402fe3f531b.png",
+    "geo_address_info": {
+     "address": "Business Turku"
+    }
+   }
+  },
+  {
+   "guest_count": 20,
+   "event": {
+    "api_id": "evt-WGBrOTjOHsHzaOI",
+    "name": "Builder's Challenge Series: Session 3: Vibe Coding with Heidi Suutari",
+    "start_at": "2026-05-18T12:00:00.000Z",
+    "end_at": "2026-05-18T15:00:00.000Z",
+    "url": "puax826s",
+    "cover_url": "https://images.lumacdn.com/uploads/hv/831c91cd-6500-4862-929b-1429103ed628.png",
+    "geo_address_info": {
+     "address": "EduCity"
+    }
+   }
+  },
+  {
+   "guest_count": 22,
+   "event": {
+    "api_id": "evt-s4zeC8hnDAANGI9",
+    "name": "Builder's Challenge Series: Session 2: MIMIR Workshop (Research-to-Business)",
+    "start_at": "2026-05-15T12:00:00.000Z",
+    "end_at": "2026-05-15T15:00:00.000Z",
+    "url": "g8zu6hd7",
+    "cover_url": "https://images.lumacdn.com/uploads/ql/81ea84ae-2f02-4ec1-b06d-722328a2e8e8.png",
+    "geo_address_info": {
+     "address": "EduCity"
+    }
+   }
+  },
+  {
+   "guest_count": 45,
+   "event": {
+    "api_id": "evt-kri2bBnqlOBoQ8f",
+    "name": "Builder's Challenge Series: Session 1: Founder Stories",
+    "start_at": "2026-05-13T13:00:00.000Z",
+    "end_at": "2026-05-13T16:00:00.000Z",
+    "url": "v675qmca",
+    "cover_url": "https://images.lumacdn.com/uploads/la/f5e9ef40-1ee6-4795-9e0f-29cc319982df.png",
+    "geo_address_info": {
+     "address": "Astra"
+    }
+   }
+  },
+  {
+   "guest_count": 19,
+   "event": {
+    "api_id": "evt-QOTx596jojEQfin",
+    "name": "Yoga outdoors",
+    "start_at": "2026-05-07T09:30:00.000Z",
+    "end_at": "2026-05-07T11:00:00.000Z",
+    "url": "yg6wgmz6",
+    "cover_url": "https://images.lumacdn.com/uploads/lb/2e4fb249-38f7-4872-9f52-fc3b6f1cd6cb.jpg",
+    "geo_address_info": {
+     "address": "Kupittaa Park"
+    }
+   }
+  }
+ ]
+}
