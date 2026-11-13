@@ -4,6 +4,7 @@ import snapshot from "@/content/events-snapshot.json";
 /** Boost's public lu.ma calendar (https://lu.ma/boost). */
 const CALENDAR_ID = "cal-DFTEOW6z93AOspN";
 const API = "https://api.lu.ma/calendar/get-items";
+const USER_AGENT = "Mozilla/5.0 (compatible; BoostTurkuSite/1.0; +https://www.boostturku.com)";
 
 export type LumaEvent = {
   id: string;
@@ -71,7 +72,8 @@ async function fetchPeriod(period: "future" | "past", limit: number): Promise<Lu
   const url = `${API}?calendar_api_id=${CALENDAR_ID}&period=${period}&pagination_limit=${limit}`;
   for (let attempt = 0; attempt < 2; attempt++) {
     try {
-      const res = await fetch(url, { headers: { accept: "application/json" } });
+      // lu.ma answers 429 to requests without a User-Agent (Node's fetch sends none it accepts).
+      const res = await fetch(url, { headers: { accept: "application/json", "user-agent": USER_AGENT } });
       if (res.status === 429 && attempt === 0) {
         await new Promise((r) => setTimeout(r, 1500));
         continue;

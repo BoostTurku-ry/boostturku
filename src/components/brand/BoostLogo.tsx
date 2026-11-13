@@ -9,7 +9,7 @@ type BoostLogoProps = {
 export function BoostLogo({ className, title = "Boost Turku" }: BoostLogoProps) {
   return (
     <svg
-      viewBox="0 0 70 24"
+      viewBox="0 -0.25 70.25 24.5"
       fill="currentColor"
       {...(title ? { role: "img", "aria-label": title } : { "aria-hidden": true })}
       className={cn("h-6 w-auto", className)}
