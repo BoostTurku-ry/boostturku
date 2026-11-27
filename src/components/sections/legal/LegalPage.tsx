@@ -1,17 +1,8 @@
-import { Marked } from "marked";
 import Link from "next/link";
 import { Reveal } from "@/components/motion/Reveal";
 import { Container } from "@/components/ui/Container";
 import type { LegalDocument } from "@/content/privacy";
-
-const markdown = new Marked({ gfm: true, breaks: false });
-
-function render(body: string) {
-  return (markdown.parse(body, { async: false }) as string).replace(
-    /<a href="(https?:\/\/[^"]+)"/g,
-    '<a href="$1" target="_blank" rel="noopener noreferrer"',
-  );
-}
+import { renderMarkdown } from "@/lib/markdown";
 
 type LegalPageProps = {
   doc: LegalDocument;
@@ -68,7 +59,7 @@ export function LegalPage({ doc, related }: LegalPageProps) {
                   <span className="meta-label text-boost">{String(i + 1).padStart(2, "0")}</span>
                   {section.title}
                 </h2>
-                <div className="prose-boost mt-5 text-base sm:text-[1.0625rem]" dangerouslySetInnerHTML={{ __html: render(section.body) }} />
+                <div className="prose-boost mt-5 text-base sm:text-[1.0625rem]" dangerouslySetInnerHTML={{ __html: renderMarkdown(section.body) }} />
               </article>
             ))}
 

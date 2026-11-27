@@ -3,8 +3,9 @@
 import { LayoutGroup, motion } from "motion/react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useEffect, useState } from "react";
+import { Fragment, useEffect, useState } from "react";
 import { BoostLogo } from "@/components/brand/BoostLogo";
+import { ApplyMenu, MobileApplyList } from "@/components/layout/ApplyMenu";
 import { ThemeToggle } from "@/components/layout/ThemeToggle";
 import { ButtonLink } from "@/components/ui/Button";
 import { mainNav } from "@/content/site";
@@ -72,31 +73,33 @@ export function SiteHeader() {
         <LayoutGroup>
           <nav aria-label="Main" className="hidden items-center lg:flex" onMouseLeave={() => setHovered(null)}>
             {mainNav.map((item) => (
-              <Link
-                key={item.href}
-                href={item.href}
-                {...(item.external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
-                onMouseEnter={() => setHovered(item.href)}
-                onFocus={() => setHovered(item.href)}
-                className={cn(
-                  "relative px-4 py-2 text-[14.5px] font-normal transition-colors",
-                  dark ? "text-white/75 hover:text-white" : "text-ink-soft hover:text-ink",
-                )}
-              >
-                {hovered === item.href && (
-                  <motion.span
-                    layoutId="nav-hover"
-                    className={cn("absolute inset-0 -z-10 rounded-sm", dark ? "bg-white/10" : "bg-ink/[0.06]")}
-                    transition={{ type: "spring", bounce: 0.2, duration: 0.45 }}
-                  />
-                )}
-                {item.label}
-                {item.external && (
-                  <span aria-hidden className="ml-1 text-[10px]">
-                    ↗
-                  </span>
-                )}
-              </Link>
+              <Fragment key={item.href}>
+                <Link
+                  href={item.href}
+                  {...(item.external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
+                  onMouseEnter={() => setHovered(item.href)}
+                  onFocus={() => setHovered(item.href)}
+                  className={cn(
+                    "relative px-4 py-2 text-[14.5px] font-normal transition-colors",
+                    dark ? "text-white/75 hover:text-white" : "text-ink-soft hover:text-ink",
+                  )}
+                >
+                  {hovered === item.href && (
+                    <motion.span
+                      layoutId="nav-hover"
+                      className={cn("absolute inset-0 -z-10 rounded-sm", dark ? "bg-white/10" : "bg-ink/[0.06]")}
+                      transition={{ type: "spring", bounce: 0.2, duration: 0.45 }}
+                    />
+                  )}
+                  {item.label}
+                  {item.external && (
+                    <span aria-hidden className="ml-1 text-[10px]">
+                      ↗
+                    </span>
+                  )}
+                </Link>
+                {item.href === "/events" && <ApplyMenu dark={dark} hovered={hovered === "apply"} onHover={() => setHovered("apply")} />}
+              </Fragment>
             ))}
           </nav>
         </LayoutGroup>
@@ -119,16 +122,10 @@ export function SiteHeader() {
           >
             <span aria-hidden className="relative block h-2.5 w-4">
               <span
-                className={cn(
-                  "absolute left-0 h-px w-4 bg-(--bar) transition-all duration-300",
-                  open ? "top-1/2 rotate-45" : "top-0",
-                )}
+                className={cn("absolute left-0 h-px w-4 bg-(--bar) transition-all duration-300", open ? "top-1/2 rotate-45" : "top-0")}
               />
               <span
-                className={cn(
-                  "absolute left-0 h-px w-4 bg-(--bar) transition-all duration-300",
-                  open ? "top-1/2 -rotate-45" : "top-full",
-                )}
+                className={cn("absolute left-0 h-px w-4 bg-(--bar) transition-all duration-300", open ? "top-1/2 -rotate-45" : "top-full")}
               />
             </span>
           </button>
@@ -155,6 +152,7 @@ export function SiteHeader() {
             </Link>
           ))}
         </nav>
+        <MobileApplyList onNavigate={() => setOpen(false)} />
         <ButtonLink href="/get-involved" size="lg" arrow className="mt-8 w-full">
           Join Boost — it&apos;s free
         </ButtonLink>

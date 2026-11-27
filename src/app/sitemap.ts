@@ -1,4 +1,5 @@
 import type { MetadataRoute } from "next";
+import { applicationKinds } from "@/content/applications";
 import { programDetails } from "@/content/programs";
 import { getAllPosts } from "@/lib/posts";
 
@@ -10,6 +11,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   return [
     ...pages.map((p) => ({ url: `${BASE}${p}` })),
     ...programDetails.map((p) => ({ url: `${BASE}/programs/${p.slug}` })),
+    ...Object.keys(applicationKinds).map((kind) => ({ url: `${BASE}/apply/${kind}` })),
     ...posts.map((p) => ({ url: `${BASE}/blog/${p.slug}`, lastModified: p.date })),
   ];
 }

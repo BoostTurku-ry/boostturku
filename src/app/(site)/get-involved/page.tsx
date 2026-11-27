@@ -1,4 +1,7 @@
 import type { Metadata } from "next";
+import Link from "next/link";
+import { Suspense } from "react";
+import { BoardApplyCallout } from "@/components/sections/apply/ApplyStatus";
 import { MembershipForm } from "@/components/sections/forms/MembershipForm";
 import { PageHero } from "@/components/sections/shared/PageHero";
 import { PhotoMosaic } from "@/components/sections/shared/PhotoMosaic";
@@ -75,6 +78,11 @@ export default function GetInvolvedPage() {
                 <span className="meta-label text-boost">{String(i + 1).padStart(2, "0")}</span>
                 <p className="heading mt-6 text-2xl">{way.title}</p>
                 <p className="mt-3 leading-relaxed text-ink-soft">{way.body}</p>
+                {way.cta && (
+                  <Link href={way.cta.href} className="mt-5 inline-flex items-center gap-2 text-sm font-medium text-ink underline decoration-line underline-offset-4 hover:decoration-boost">
+                    {way.cta.label} <span aria-hidden>→</span>
+                  </Link>
+                )}
               </li>
             ))}
           </ul>
@@ -97,6 +105,9 @@ export default function GetInvolvedPage() {
                 </div>
               ))}
             </dl>
+            <Suspense>
+              <BoardApplyCallout />
+            </Suspense>
           </div>
         </Container>
       </section>

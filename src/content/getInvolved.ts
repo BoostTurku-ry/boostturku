@@ -15,14 +15,16 @@ export const memberPerks = [
   { title: "A path to the board", body: "Only members can run for the board, the team that runs Boost each year." },
 ];
 
-export const ways = [
+export const ways: { title: string; body: string; cta?: { label: string; href: string } }[] = [
   {
     title: "Volunteer",
     body: "Help run an event, host a workshop or join a project team. It's the easiest way to meet the community and see how Boost works.",
+    cta: { label: "Apply to volunteer", href: "/apply/volunteer" },
   },
   {
     title: "Join the board",
     body: "Each autumn a new chairperson is elected at the fall association meeting and forms the next year's board. Board members run every event and program.",
+    cta: { label: "Board applications", href: "/apply/board" },
   },
   {
     title: "Earn credits",

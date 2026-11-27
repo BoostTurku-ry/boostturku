@@ -4,12 +4,15 @@ import { Container } from "@/components/ui/Container";
 import { gallery } from "@/content/gallery";
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import { Suspense } from "react";
+import { ApplyStatus } from "@/components/sections/apply/ApplyStatus";
 import { ProgramDetailSections } from "@/components/sections/programs/ProgramDetailSections";
 import { FaqSection } from "@/components/sections/shared/FaqSection";
 import { JoinSection } from "@/components/sections/shared/JoinSection";
 import { PageHero } from "@/components/sections/shared/PageHero";
 import { ButtonLink } from "@/components/ui/Button";
 import { StatusPill } from "@/components/ui/StatusPill";
+import { isApplicationKind } from "@/content/applications";
 import { getProgram, programDetails } from "@/content/programs";
 import { site } from "@/content/site";
 
@@ -27,6 +30,21 @@ export default async function ProgramPage({ params }: PageProps<"/programs/[slug
   if (!program) notFound();
 
   const telegram = site.socials.find((s) => s.label === "Telegram")!;
+  // Shown when no application round is open (and while the live status loads).
+  const staticStatus = (
+    <>
+      <StatusPill label={program.status.label} tone={program.status.tone} className="w-full justify-center sm:w-auto" />
+      {program.primaryCta ? (
+        <ButtonLink href={program.primaryCta.href} arrow>
+          {program.primaryCta.label}
+        </ButtonLink>
+      ) : (
+        <ButtonLink href={telegram.href} variant="outline">
+          Get notified on Telegram
+        </ButtonLink>
+      )}
+    </>
+  );
 
   return (
     <>
@@ -40,18 +58,13 @@ export default async function ProgramPage({ params }: PageProps<"/programs/[slug
         title={program.name}
         intro={program.summary}
         actions={
-          <>
-            <StatusPill label={program.status.label} tone={program.status.tone} className="w-full justify-center sm:w-auto" />
-            {program.primaryCta ? (
-              <ButtonLink href={program.primaryCta.href} arrow>
-                {program.primaryCta.label}
-              </ButtonLink>
-            ) : (
-              <ButtonLink href={telegram.href} variant="outline">
-                Get notified on Telegram
-              </ButtonLink>
-            )}
-          </>
+          isApplicationKind(program.slug) ? (
+            <Suspense fallback={staticStatus}>
+              <ApplyStatus kind={program.slug} fallback={staticStatus} />
+            </Suspense>
+          ) : (
+            staticStatus
+          )
         }
         photo={program.photo}
       >
