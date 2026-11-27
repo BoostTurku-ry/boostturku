@@ -1,4 +1,7 @@
-/** Brand glyphs (from Simple Icons), drawn in currentColor. */
+/**
+ * Brand glyphs from Simple Icons (CC0 1.0, https://simpleicons.org), drawn in currentColor.
+ * The Telegram and Discord logos themselves are trademarks of their owners.
+ */
 
 type IconProps = { className?: string };
 

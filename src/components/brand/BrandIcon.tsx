@@ -1,5 +1,10 @@
 import { cn } from "@/lib/cn";
 
+/*
+ * Icon paths: Material Symbols by Google, licensed under the Apache License 2.0
+ * (https://www.apache.org/licenses/LICENSE-2.0). Source: https://fonts.google.com/icons
+ */
+
 /**
  * Headline icons from Google's Material Symbols (outlined), as the brandbook
  * specifies, in a solid colour (currentColor, Boost red by default). Size them

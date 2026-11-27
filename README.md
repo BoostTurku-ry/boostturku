@@ -159,4 +159,8 @@ Not covered by the MIT licence:
 - **Fonts:**
   - Clash Display and Switzer are under ITF's Fontshare licence and aren't stored in this repo.
   - Axis (`src/assets/fonts/Axis-Extrabold.otf`) is the brand display face carried over from the old site. Its licence still needs to be confirmed.
+- **Partner and alumni company logos** (`public/images/partners`, `public/images/alumni`) are trademarks of their owners, shown only to identify them.
 - **React Bits components** (`src/components/reactbits/`) are © David Haz under their own licence (MIT + Commons Clause, see the folder's `LICENSE.md`).
+- **Icons:** Material Symbols paths in `src/components/brand/BrandIcon.tsx` are © Google under the Apache License 2.0. The Telegram and Discord glyphs come from Simple Icons (CC0) and are trademarks of their owners.
+
+Dependencies are installed from npm and aren't stored in this repo. They're MIT-licensed except GSAP, which uses its own [no-charge licence](https://gsap.com/standard-license) that allows use on websites.
