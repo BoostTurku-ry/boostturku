@@ -45,21 +45,58 @@ export const pillars = [
   },
 ];
 
+/**
+ * Board 2026, from the old site's About page (names, roles, LinkedIn). The old site
+ * only published personal emails for Heta (PoC grant page) and Wilma (BoostHer);
+ * everyone else is reached through board@boostturku.com. Add an `email` here only
+ * once it's confirmed.
+ */
 export const board: Person[] = [
-  { name: "Heta Lääkkö", role: "President", photo: "/images/people/heta-laakko.jpg" },
-  { name: "Tom Pippuri", role: "Vice President", photo: "/images/people/tom-pippuri.jpg" },
-  { name: "Topi Hälinen", role: "Head of Finance", photo: "/images/people/topi-halinen.jpg" },
-  { name: "Aino Kokkonen", role: "Head of Marketing", photo: "/images/people/aino-kokkonen.jpg" },
-  { name: "Eetu Salminen", role: "Head of Projects", photo: "/images/people/eetu-salminen.jpg" },
-  { name: "Arttu Karonen", role: "Head of Operations", photo: "/images/people/arttu-karonen.jpg" },
-  { name: "Wilma Tiainen", role: "Head of Growth", photo: "/images/people/wilma-tiainen.jpg" },
+  {
+    name: "Heta Lääkkö",
+    role: "President",
+    photo: "/images/people/heta-laakko.jpg",
+    email: "heta@boostturku.com",
+    linkedin: "https://www.linkedin.com/in/heta-l%C3%A4%C3%A4kk%C3%B6-61859421a/",
+  },
+  { name: "Tom Pippuri", role: "Vice President", photo: "/images/people/tom-pippuri.jpg", linkedin: "https://www.linkedin.com/in/tom-pippuri/" },
+  {
+    name: "Topi Hälinen",
+    role: "Head of Finance",
+    photo: "/images/people/topi-halinen.jpg",
+    linkedin: "https://www.linkedin.com/in/topi-h%C3%A4linen-263948369/",
+  },
+  {
+    name: "Aino Kokkonen",
+    role: "Head of Marketing",
+    photo: "/images/people/aino-kokkonen.jpg",
+    linkedin: "https://www.linkedin.com/in/aino-kokkonen-0363b1386/",
+  },
+  { name: "Eetu Salminen", role: "Head of Projects", photo: "/images/people/eetu-salminen.jpg", linkedin: "https://www.linkedin.com/in/eetusalminen22333/" },
+  {
+    name: "Arttu Karonen",
+    role: "Head of Operations",
+    photo: "/images/people/arttu-karonen.jpg",
+    linkedin: "https://www.linkedin.com/in/arttu-karonen-526872261/",
+  },
+  {
+    name: "Wilma Tiainen",
+    role: "Head of Growth",
+    photo: "/images/people/wilma-tiainen.jpg",
+    email: "wilma@boostturku.com",
+    linkedin: "https://www.linkedin.com/in/wilma-tiainen/",
+  },
 ];
+
+/** Shared inbox that reaches the whole board (published on the old site). */
+export const boardEmail = "board@boostturku.com";
 
 export const director: Person = {
   name: "Lauri Koittola",
   role: "Executive Director & Head Coach",
   photo: "/images/people/lauri-koittola.jpg",
   email: "lauri@boostturku.com",
+  linkedin: "https://www.linkedin.com/in/laurikoittola/",
 };
 
 export const partners = {

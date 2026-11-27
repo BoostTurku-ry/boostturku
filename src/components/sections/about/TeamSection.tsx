@@ -2,7 +2,7 @@ import Image from "next/image";
 import { Reveal } from "@/components/motion/Reveal";
 import { Container } from "@/components/ui/Container";
 import { SectionHeading } from "@/components/ui/SectionHeading";
-import { board, director } from "@/content/about";
+import { board, boardEmail, director } from "@/content/about";
 import type { Person } from "@/content/types";
 
 export function TeamSection() {
@@ -14,6 +14,14 @@ export function TeamSection() {
           eyebrow="The team"
           title="Board 2026"
           intro="Boost is run by a student board elected each year at our fall association meeting, together with our executive director and head coach."
+          action={
+            <a
+              href={`mailto:${boardEmail}`}
+              className="inline-flex h-10 items-center rounded-sm border border-ink/20 px-5 text-sm font-medium text-ink transition-colors hover:border-ink"
+            >
+              Email the board · {boardEmail}
+            </a>
+          }
         />
 
         <ul className="mt-14 grid grid-cols-2 gap-x-5 gap-y-10 sm:grid-cols-3 lg:grid-cols-4">
@@ -56,10 +64,25 @@ function PersonCard({ person, highlight = false }: { person: Person; highlight?:
       <figcaption className="mt-4">
         <p className="font-semibold text-ink">{person.name}</p>
         <p className="meta-label mt-1 text-ink-muted">{person.role}</p>
-        {person.email && (
-          <a href={`mailto:${person.email}`} className="mt-2 inline-block text-sm text-ink underline decoration-line underline-offset-4 hover:decoration-boost">
-            {person.email}
-          </a>
+        {(person.email || person.linkedin) && (
+          <p className="mt-2 flex flex-wrap items-center gap-x-3 gap-y-1 text-sm">
+            {person.email && (
+              <a href={`mailto:${person.email}`} className="text-ink underline decoration-line underline-offset-4 hover:decoration-boost">
+                {person.email}
+              </a>
+            )}
+            {person.linkedin && (
+              <a
+                href={person.linkedin}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={`${person.name} on LinkedIn`}
+                className="meta-label text-ink-muted transition-colors hover:text-ink"
+              >
+                LinkedIn ↗
+              </a>
+            )}
+          </p>
         )}
       </figcaption>
     </figure>

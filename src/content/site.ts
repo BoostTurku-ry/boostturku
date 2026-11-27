@@ -56,6 +56,7 @@ export const footerNav: NavLink[] = [
 /** Named contacts shown on the contact page. */
 export const contacts = [
   { topic: "General questions", name: "Boost Turku", email: "info@boostturku.com" },
+  { topic: "The board", name: "Boost Turku board", email: "board@boostturku.com" },
   { topic: "Programs and coaching", name: "Lauri Koittola, Executive Director", email: "lauri@boostturku.com" },
   { topic: "Proof of Concept grant", name: "Heta Lääkkö, President", email: "heta@boostturku.com" },
   { topic: "BoostHer", name: "Wilma Tiainen, BoostHer lead", email: "wilma@boostturku.com" },
