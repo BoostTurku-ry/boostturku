@@ -36,7 +36,7 @@ export function SectionHeading({
       {(eyebrow || index) && (
         <div
           className={cn(
-            "label-mono flex items-center gap-4 border-t pt-4",
+            "meta-label flex items-center gap-4 border-t pt-4",
             dark ? "border-white/15 text-white/55" : "border-line text-ink-muted",
           )}
         >

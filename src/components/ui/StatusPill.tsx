@@ -11,7 +11,7 @@ export function StatusPill({ label, tone, className }: StatusPillProps) {
   return (
     <span
       className={cn(
-        "label-mono inline-flex items-center gap-2 rounded-full border px-3 py-1.5",
+        "meta-label inline-flex items-center gap-2 rounded-sm border px-3 py-1.5",
         tone === "open" && "border-boost/30 bg-boost-soft text-boost",
         tone === "next" && "border-line bg-surface text-ink-soft",
         tone === "closed" && "border-line bg-transparent text-ink-muted",

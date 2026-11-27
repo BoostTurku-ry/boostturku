@@ -14,7 +14,7 @@ export function ContactForm() {
   if (state.status === "success") {
     return (
       <div role="status" className="rounded-3xl border border-boost/30 bg-boost-soft p-8">
-        <p className="label-mono text-boost">Message sent</p>
+        <p className="meta-label text-boost">Message sent</p>
         <p className="heading mt-3 text-2xl">{state.message}</p>
       </div>
     );
@@ -39,7 +39,7 @@ export function ContactForm() {
           type="submit"
           disabled={pending}
           className={cn(
-            "inline-flex h-12 items-center gap-2 rounded-full bg-ink px-7 font-medium text-paper transition-colors hover:bg-boost hover:text-white",
+            "inline-flex h-12 items-center gap-2 rounded-sm bg-ink px-7 font-medium text-paper transition-colors hover:bg-boost hover:text-white",
             pending && "opacity-70",
           )}
         >

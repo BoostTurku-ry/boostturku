@@ -25,7 +25,7 @@ export function FormField({
   const id = `f-${name}`;
   return (
     <div className={className}>
-      <label htmlFor={id} className="label-mono text-ink-muted">
+      <label htmlFor={id} className="meta-label text-ink-muted">
         {label}
       </label>
       <div className="mt-2">

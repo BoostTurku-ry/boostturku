@@ -41,12 +41,12 @@ export function CompanyWall() {
               aria-selected={active}
               onClick={() => setFilter(f.key)}
               className={cn(
-                "inline-flex items-center gap-2 rounded-full border px-4 py-2 text-sm font-medium transition-colors",
+                "inline-flex items-center gap-2 rounded-sm border px-4 py-2 text-sm font-medium transition-colors",
                 active ? "border-ink bg-ink text-paper" : "border-line bg-surface text-ink-soft hover:border-ink/30 hover:text-ink",
               )}
             >
               {f.label}
-              <span className={cn("label-mono", active ? "text-paper/60" : "text-ink-muted")}>{count}</span>
+              <span className={cn("meta-label", active ? "text-paper/60" : "text-ink-muted")}>{count}</span>
             </button>
           );
         })}
@@ -85,7 +85,7 @@ function CompanyTile({ company }: { company: AlumniCompany }) {
       </span>
       <span className="mt-6 block">
         <span className="block font-semibold text-ink">{company.name}</span>
-        <span className="label-mono mt-1 block text-ink-muted">{company.label}</span>
+        <span className="meta-label mt-1 block text-ink-muted">{company.label}</span>
       </span>
     </>
   );

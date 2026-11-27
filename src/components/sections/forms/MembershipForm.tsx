@@ -24,7 +24,7 @@ export function MembershipForm() {
   if (state.status === "success") {
     return (
       <div role="status" className="rounded-3xl border border-boost/30 bg-boost-soft p-8">
-        <p className="label-mono text-boost">You&apos;re in</p>
+        <p className="meta-label text-boost">You&apos;re in</p>
         <p className="heading mt-3 text-2xl">{state.message}</p>
       </div>
     );
@@ -46,12 +46,12 @@ export function MembershipForm() {
       </FormField>
 
       <fieldset className="sm:col-span-2">
-        <legend className="label-mono text-ink-muted">I&apos;m interested in (optional)</legend>
+        <legend className="meta-label text-ink-muted">I&apos;m interested in (optional)</legend>
         <div className="mt-3 flex flex-wrap gap-2">
           {interests.map((interest) => (
             <label key={interest} className="cursor-pointer">
               <input type="checkbox" name="interests" value={interest} className="peer sr-only" />
-              <span className="inline-flex rounded-full border border-line bg-paper px-4 py-2 text-sm text-ink-soft transition-colors peer-checked:border-ink peer-checked:bg-ink peer-checked:text-paper peer-focus-visible:outline-2 peer-focus-visible:outline-offset-2 peer-focus-visible:outline-boost">
+              <span className="inline-flex rounded-sm border border-line bg-paper px-4 py-2 text-sm text-ink-soft transition-colors peer-checked:border-ink peer-checked:bg-ink peer-checked:text-paper peer-focus-visible:outline-2 peer-focus-visible:outline-offset-2 peer-focus-visible:outline-boost">
                 {interest}
               </span>
             </label>
@@ -72,7 +72,7 @@ export function MembershipForm() {
           type="submit"
           disabled={pending}
           className={cn(
-            "inline-flex h-12 items-center gap-2 rounded-full bg-boost px-7 font-medium text-white transition-colors hover:bg-boost-dark",
+            "inline-flex h-12 items-center gap-2 rounded-sm bg-boost px-7 font-medium text-white transition-colors hover:bg-boost-dark",
             pending && "opacity-70",
           )}
         >

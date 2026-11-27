@@ -19,6 +19,11 @@ export const site = {
       "https://docs.google.com/forms/d/e/1FAIpQLSd_ULN2AkSZfvyD5y9d382OG2rkIfactWh3MfMhYMD3QQ9xXw/viewform",
     boostHer: "https://boosther.boostturku.com",
   },
+  /** Community chats. Discord has no invite yet: set `href` when the server opens. */
+  community: {
+    telegram: { label: "Telegram", href: "https://t.me/boostturku" as string | null },
+    discord: { label: "Discord", href: null as string | null },
+  },
   socials: [
     { label: "Telegram", href: "https://t.me/boostturku", external: true },
     { label: "Instagram", href: "https://www.instagram.com/boostturku/", external: true },
