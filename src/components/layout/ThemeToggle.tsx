@@ -1,7 +1,6 @@
 "use client";
 
-import { useEffect } from "react";
-import { applyTheme, getTheme, hasStoredTheme } from "@/lib/theme";
+import { applyTheme, getTheme } from "@/lib/theme";
 import { cn } from "@/lib/cn";
 
 /**
@@ -9,16 +8,6 @@ import { cn } from "@/lib/cn";
  * <html data-theme> attribute), so server and client markup always match.
  */
 export function ThemeToggle({ className }: { className?: string }) {
-  // Follow OS changes until the visitor makes an explicit choice.
-  useEffect(() => {
-    const mq = window.matchMedia("(prefers-color-scheme: dark)");
-    const onChange = (e: MediaQueryListEvent) => {
-      if (!hasStoredTheme()) applyTheme(e.matches ? "dark" : "light", false);
-    };
-    mq.addEventListener("change", onChange);
-    return () => mq.removeEventListener("change", onChange);
-  }, []);
-
   const toggle = () => {
     const next = getTheme() === "dark" ? "light" : "dark";
     const root = document.documentElement;
@@ -36,7 +25,7 @@ export function ThemeToggle({ className }: { className?: string }) {
       aria-label="Toggle dark mode"
       title="Toggle day / night"
       className={cn(
-        "relative grid size-10 place-items-center overflow-hidden rounded-full border border-line bg-surface text-ink transition-colors hover:border-ink/30",
+        "relative grid size-10 cursor-pointer place-items-center overflow-hidden rounded-sm border border-line bg-surface text-ink transition-colors hover:border-ink/30",
         className,
       )}
     >
