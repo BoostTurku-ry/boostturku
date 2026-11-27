@@ -3,7 +3,9 @@ import Image from "next/image";
 import { CalendarCard } from "@/components/sections/shared/CalendarCard";
 import { EventCard } from "@/components/sections/shared/EventCard";
 import { NoUpcoming } from "@/components/sections/shared/NoUpcoming";
-import { PageHero } from "@/components/sections/shared/PageHero";
+import { EventsHeader } from "@/components/sections/events/EventsHeader";
+import { PhotoMarquee } from "@/components/sections/shared/PhotoMarquee";
+import { gallery } from "@/content/gallery";
 import { ButtonLink } from "@/components/ui/Button";
 import { Container } from "@/components/ui/Container";
 import { SectionHeading } from "@/components/ui/SectionHeading";
@@ -30,17 +32,7 @@ export default async function EventsPage() {
 
   return (
     <>
-      <PageHero
-        eyebrow="Events"
-        meta={upcoming ? `${upcoming.length} upcoming` : undefined}
-        title="Come to something."
-        intro="Workshops, talks, founder nights and community breakfasts throughout the year. Every event is free and open to everyone, member or not."
-        actions={
-          <ButtonLink href={site.links.luma} arrow>
-            Subscribe on lu.ma
-          </ButtonLink>
-        }
-      />
+      <EventsHeader upcomingCount={upcoming ? upcoming.length : null} />
 
       {/* Upcoming */}
       <section className="pb-24 sm:pb-32">
@@ -54,6 +46,7 @@ export default async function EventsPage() {
             <CalendarCard showCalendarLink={false} />
           </div>
         </Container>
+        <PhotoMarquee photos={gallery.events} className="mt-20 sm:mt-24" heightClass="h-52 sm:h-64" duration={60} />
       </section>
 
       {/* Past */}
@@ -75,7 +68,7 @@ export default async function EventsPage() {
             <div className="mt-14 space-y-14">
               {groupByMonth(past).map(([month, events]) => (
                 <div key={month} className="grid gap-6 lg:grid-cols-12 lg:gap-10">
-                  <h3 className="label-mono text-ink-muted lg:col-span-2 lg:pt-5">{month}</h3>
+                  <h3 className="meta-label text-ink-muted lg:col-span-2 lg:pt-5">{month}</h3>
                   <ul className="border-t border-line lg:col-span-10">
                     {events.map((event) => (
                       <PastRow key={event.id} event={event} />
@@ -101,7 +94,7 @@ function PastRow({ event }: { event: LumaEvent }) {
         rel="noopener noreferrer"
         className="group grid grid-cols-[3.5rem_1fr_auto] items-center gap-4 py-4 sm:grid-cols-[3.5rem_5.5rem_1fr_auto] sm:gap-6"
       >
-        <span className="label-mono text-ink-muted">
+        <span className="meta-label text-ink-muted">
           {date.day} {date.month}
         </span>
         <span className="relative hidden aspect-[4/3] w-[5.5rem] overflow-hidden rounded-lg bg-line sm:block">
@@ -110,13 +103,13 @@ function PastRow({ event }: { event: LumaEvent }) {
           )}
         </span>
         <span className="min-w-0">
-          {event.series && <span className="label-mono mr-2 text-boost">{event.series}</span>}
+          {event.series && <span className="meta-label mr-2 text-boost">{event.series}</span>}
           <span className="font-medium text-ink group-hover:text-boost">{event.title}</span>
           <span className="mt-0.5 block text-sm text-ink-muted">
             {[event.speaker, event.venue].filter(Boolean).join(" · ")}
           </span>
         </span>
-        <span className="label-mono hidden text-right text-ink-muted sm:block">
+        <span className="meta-label hidden text-right text-ink-muted sm:block">
           {event.guests > 0 ? `${event.guests} went` : ""}
           <span aria-hidden className="ml-3 inline-block transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5">
             ↗
