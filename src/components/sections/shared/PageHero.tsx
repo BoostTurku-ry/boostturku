@@ -27,7 +27,7 @@ export function PageHero({ eyebrow, title, intro, meta, actions, photo, children
     <section className={cn("relative isolate overflow-hidden", className)}>
       <Noise opacity={0.04} fps={8} blendMode="overlay" contrast={0.5} zIndex={-1} style={{ maskImage: "linear-gradient(to bottom, #000 55%, transparent)", WebkitMaskImage: "linear-gradient(to bottom, #000 55%, transparent)" }} />
       <Container size="wide" className="pt-32 pb-16 sm:pt-40 sm:pb-20">
-        <div className="label-mono flex flex-wrap items-center justify-between gap-3 border-t border-line pt-4 text-ink-muted">
+        <div className="meta-label flex flex-wrap items-center justify-between gap-3 border-t border-line pt-4 text-ink-muted">
           <span className="flex items-center gap-3">
             <span aria-hidden className="size-1.5 rounded-full bg-boost" />
             {eyebrow}

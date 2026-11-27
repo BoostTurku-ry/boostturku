@@ -17,11 +17,7 @@ Animated components copied from [reactbits.dev](https://reactbits.dev) (TypeScri
 | `ScrollReveal` | Manifesto text that resolves word by word on scroll | `gsap` |
 | `FlowingMenu` | Programs list with hover marquee band | `@hugeicons/*` |
 | `RotatingText` | Rotating last word of the hero headline | `motion` |
-| `Magnet` | Subtle magnetic pull on primary calls to action | — |
-| `CursorGrid` | Grid that lights up around the cursor (Impact and Join backdrops) | — |
 | `Noise` | Very faint film grain behind the hero | — |
-| `SpotlightCard` | Event cards with a cursor-following glow | — |
-| `Stack` | Swipeable photo deck in the hero | `motion` |
 | `DepthCarousel` | "Life at Boost" 3D photo carousel | `gsap` |
 
 To add another: `curl https://reactbits.dev/r/<Name>-TS-TW.json` and copy `files[0].content` here.

@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import { BrandIcon } from "@/components/brand/BrandIcon";
 import Link from "next/link";
 import { useState } from "react";
 import { Container } from "@/components/ui/Container";
@@ -49,7 +50,7 @@ export function WaysInSection() {
                   ))}
                 </div>
               </div>
-              <p className="label-mono mt-5 flex justify-between text-ink-muted">
+              <p className="meta-label mt-5 flex justify-between text-ink-muted">
                 <span>{waysIn[active].title}</span>
                 <span>
                   <span className="text-boost">{waysIn[active].step}</span> / {String(waysIn.length).padStart(2, "0")}
@@ -70,7 +71,7 @@ export function WaysInSection() {
                     onFocus={() => setActive(i)}
                     className="group grid grid-cols-[3rem_1fr_auto] items-start gap-x-4 py-8 sm:py-10"
                   >
-                    <span className={cn("label-mono pt-3 transition-colors", isActive ? "text-boost" : "text-ink-muted")}>
+                    <span className={cn("meta-label pt-3 transition-colors", isActive ? "text-boost" : "text-ink-muted")}>
                       {item.step}
                     </span>
                     <span>
@@ -81,6 +82,13 @@ export function WaysInSection() {
                         )}
                       >
                         {item.title}
+                        <BrandIcon
+                          name={item.icon}
+                          className={cn(
+                            "ml-3 size-9 align-[-0.1em] transition-opacity duration-300 sm:size-11",
+                            isActive ? "opacity-100" : "opacity-100 lg:opacity-35",
+                          )}
+                        />
                       </span>
                       <span
                         className={cn(
@@ -97,7 +105,7 @@ export function WaysInSection() {
                     <span
                       aria-hidden
                       className={cn(
-                        "mt-2 grid size-11 place-items-center rounded-full border transition-all duration-300",
+                        "mt-2 grid size-11 place-items-center rounded-sm border transition-all duration-300",
                         isActive ? "border-boost bg-boost text-white" : "border-line text-ink-muted",
                       )}
                     >

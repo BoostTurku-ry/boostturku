@@ -1,4 +1,3 @@
-import { GridField } from "@/components/effects/GridField";
 import CountUp from "@/components/reactbits/CountUp";
 import { ButtonLink } from "@/components/ui/Button";
 import { Container } from "@/components/ui/Container";
@@ -7,8 +6,7 @@ import { stats } from "@/content/home";
 
 export function ImpactSection() {
   return (
-    <section className="relative isolate overflow-hidden bg-night text-white">
-      <GridField tone="dark" className="-z-10" mask="radial-gradient(ellipse 70% 80% at 85% 20%, #000 10%, transparent 70%)" />
+    <section data-header-dark className="relative isolate overflow-hidden bg-night text-white">
       <Container size="wide" className="py-24 sm:py-32">
         <SectionHeading
           index={6}
@@ -26,7 +24,7 @@ export function ImpactSection() {
         <dl className="mt-20 grid gap-y-12 sm:grid-cols-2 lg:grid-cols-4">
           {stats.map((stat, i) => (
             <div key={stat.label} className="group border-t border-white/15 pt-6 lg:pr-8">
-              <dt className="label-mono flex min-h-[2.6em] justify-between gap-4 text-white/50">
+              <dt className="meta-label flex min-h-[2.6em] justify-between gap-4 text-white/50">
                 <span>{stat.label}</span>
                 <span className="hidden text-white/30 lg:inline">{String(i + 1).padStart(2, "0")}</span>
               </dt>

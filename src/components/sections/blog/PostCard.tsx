@@ -35,7 +35,7 @@ export function PostCard({ post, size = "default" }: PostCardProps) {
         )}
       </div>
       <div className={feature ? "lg:col-span-5" : "mt-5"}>
-        <p className="label-mono text-ink-muted">
+        <p className="meta-label text-ink-muted">
           {formatEventDate(post.date).long}
           {post.author && post.author !== "Boost Turku" && ` · ${post.author}`}
         </p>

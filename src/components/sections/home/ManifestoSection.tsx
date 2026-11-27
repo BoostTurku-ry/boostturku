@@ -8,7 +8,7 @@ export function ManifestoSection() {
   return (
     <section className="py-24 sm:py-32">
       <Container size="wide">
-        <div className="label-mono flex items-center gap-4 border-t border-line pt-4 text-ink-muted">
+        <div className="meta-label flex items-center gap-4 border-t border-line pt-4 text-ink-muted">
           <span className="text-boost">(01)</span>
           <span>About Boost</span>
         </div>
@@ -30,7 +30,7 @@ export function ManifestoSection() {
           <dl className="grid grid-cols-2 gap-x-6 gap-y-7 self-end border-t border-line pt-6 lg:col-span-3 lg:grid-cols-1 lg:border-t-0 lg:border-l lg:pt-0 lg:pl-8">
             {manifesto.facts.map((fact) => (
               <div key={fact.label}>
-                <dt className="label-mono text-ink-muted">{fact.label}</dt>
+                <dt className="meta-label text-ink-muted">{fact.label}</dt>
                 <dd className="mt-1.5 text-lg font-medium">{fact.value}</dd>
               </div>
             ))}

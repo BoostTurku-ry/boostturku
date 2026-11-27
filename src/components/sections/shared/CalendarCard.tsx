@@ -7,7 +7,7 @@ export function CalendarCard({ showCalendarLink = true }: { showCalendarLink?: b
     <div className="relative flex h-full flex-col overflow-hidden rounded-3xl bg-boost p-8 text-white">
       <span aria-hidden className="absolute -top-24 -right-24 size-64 rounded-full border border-white/15" />
       <span aria-hidden className="absolute -top-12 -right-12 size-40 rounded-full border border-white/15" />
-      <p className="label-mono text-white/70">Calendar</p>
+      <p className="meta-label text-white/70">Calendar</p>
       <p className="heading mt-6 text-3xl leading-tight">Every Boost event lives on lu.ma.</p>
       <p className="mt-3 max-w-[18rem] text-white/85">
         Subscribe once and new events appear in your calendar as soon as they&apos;re announced.

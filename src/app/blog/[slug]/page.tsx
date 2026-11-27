@@ -36,14 +36,14 @@ export default async function PostPage({ params }: PageProps<"/blog/[slug]">) {
     <article>
       <header className="pt-32 sm:pt-40">
         <Container size="narrow">
-          <div className="label-mono flex items-center justify-between border-t border-line pt-4 text-ink-muted">
+          <div className="meta-label flex items-center justify-between border-t border-line pt-4 text-ink-muted">
             <Link href="/blog" className="hover:text-ink">
               ← Stories
             </Link>
             <span>{formatEventDate(meta.date).long}</span>
           </div>
           <h1 className="heading mt-10 text-[clamp(2.25rem,5vw,3.75rem)] leading-[1.05]">{meta.title}</h1>
-          {meta.author && <p className="label-mono mt-6 text-ink-muted">By {meta.author}</p>}
+          {meta.author && <p className="meta-label mt-6 text-ink-muted">By {meta.author}</p>}
         </Container>
         {meta.cover && (
           <Container size="default" className="mt-12">
@@ -62,7 +62,7 @@ export default async function PostPage({ params }: PageProps<"/blog/[slug]">) {
       {(newer || older) && (
         <section className="border-t border-line bg-surface py-20">
           <Container size="wide">
-            <p className="label-mono text-ink-muted">Keep reading</p>
+            <p className="meta-label text-ink-muted">Keep reading</p>
             <div className="mt-8 grid gap-10 sm:grid-cols-2">
               {[older, newer].filter(Boolean).map((p) => (
                 <PostCard key={p!.slug} post={p!} />

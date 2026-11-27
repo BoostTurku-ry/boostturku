@@ -34,7 +34,7 @@ export function FaqSection({ items, index, title = "Frequently asked questions" 
           {items.map((item, i) => (
             <details key={item.question} open={i === 0} className="group border-b border-line">
               <summary className="flex cursor-pointer list-none items-baseline gap-5 py-6 text-lg font-medium [&::-webkit-details-marker]:hidden">
-                <span className="label-mono w-6 shrink-0 text-ink-muted group-open:text-boost">
+                <span className="meta-label w-6 shrink-0 text-ink-muted group-open:text-boost">
                   {String(i + 1).padStart(2, "0")}
                 </span>
                 <span className="flex-1">{item.question}</span>

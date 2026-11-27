@@ -24,7 +24,7 @@ export function StorySection() {
           {pillars.map((pillar, i) => (
             <li key={pillar.title} className="bg-surface">
               <Link href={pillar.href} className="group flex h-full flex-col p-8 transition-colors hover:bg-boost-soft/50">
-                <span className="label-mono text-boost">{String(i + 1).padStart(2, "0")}</span>
+                <span className="meta-label text-boost">{String(i + 1).padStart(2, "0")}</span>
                 <span className="heading mt-6 text-2xl">{pillar.title}</span>
                 <span className="mt-3 leading-relaxed text-ink-soft">{pillar.body}</span>
                 <span aria-hidden className="mt-8 text-ink-muted transition-transform group-hover:translate-x-1 group-hover:text-boost">
@@ -37,7 +37,7 @@ export function StorySection() {
 
         {/* Timeline */}
         <div className="mt-24">
-          <p className="label-mono text-ink-muted">Milestones</p>
+          <p className="meta-label text-ink-muted">Milestones</p>
           <ol className="mt-6 grid gap-x-8 sm:grid-cols-2 lg:grid-cols-4">
             {timeline.map((item, i) => (
               <li key={item.year} className="border-t border-line py-6">

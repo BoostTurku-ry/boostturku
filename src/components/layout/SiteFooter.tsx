@@ -5,7 +5,7 @@ import { footerNav, site } from "@/content/site";
 
 export function SiteFooter() {
   return (
-    <footer className="bg-night text-white">
+    <footer data-header-dark className="bg-night text-white">
       <Container size="wide" className="py-16 sm:py-20">
         <div className="grid gap-12 lg:grid-cols-[1.4fr_1fr_1fr_1fr]">
           <div>
@@ -40,6 +40,11 @@ export function SiteFooter() {
                 </a>
               </li>
             ))}
+            {!site.community.discord.href && (
+              <li className="text-white/40">
+                Discord <span className="meta-label ml-1 text-[10px]">Soon</span>
+              </li>
+            )}
           </FooterColumn>
 
           <FooterColumn title="Find us">
@@ -53,9 +58,9 @@ export function SiteFooter() {
           </FooterColumn>
         </div>
 
-        <div className="label-mono mt-16 flex flex-col gap-3 border-t border-white/10 pt-6 text-white/45 sm:flex-row sm:justify-between">
+        <div className="meta-label mt-16 flex flex-col gap-3 border-t border-white/10 pt-6 text-white/45 sm:flex-row sm:justify-between">
           <p>© {site.legalName} · Made by students, for students</p>
-          <p>Funded by the University of Turku &amp; Business Turku</p>
+          <p>Main partners: City of Turku, Business Turku &amp; Turku Startup Hub</p>
           <a href="#main" className="group inline-flex items-center gap-2 text-white/70 hover:text-white">
             Back to top
             <span aria-hidden className="transition-transform group-hover:-translate-y-0.5">
@@ -71,7 +76,7 @@ export function SiteFooter() {
 function FooterColumn({ title, children }: { title: string; children: React.ReactNode }) {
   return (
     <div>
-      <h3 className="label-mono text-white/45">{title}</h3>
+      <h3 className="meta-label text-white/45">{title}</h3>
       <ul className="mt-4 space-y-2.5">{children}</ul>
     </div>
   );

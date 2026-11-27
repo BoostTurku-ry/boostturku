@@ -37,7 +37,7 @@ export function EventsSection({ upcoming, recent }: EventsSectionProps) {
 
         {recent.length > 0 && (
           <div className="mt-10 flex flex-col gap-4 border-t border-line pt-6 lg:flex-row lg:items-start lg:gap-8">
-            <p className="label-mono shrink-0 text-ink-muted lg:pt-3">Recently at Boost</p>
+            <p className="meta-label shrink-0 text-ink-muted lg:pt-3">Recently at Boost</p>
             <ul className="flex flex-wrap gap-2">
               {recent.slice(0, 4).map((event) => (
                 <li key={event.id}>
@@ -45,9 +45,9 @@ export function EventsSection({ upcoming, recent }: EventsSectionProps) {
                     href={event.url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="group inline-flex items-center gap-3 rounded-full border border-line bg-surface py-2 pr-4 pl-3 text-sm text-ink-soft transition-colors hover:border-boost/40 hover:text-ink"
+                    className="group inline-flex items-center gap-3 rounded-sm border border-line bg-surface py-2 pr-4 pl-3 text-sm text-ink-soft transition-colors hover:border-boost/40 hover:text-ink"
                   >
-                    <span className="label-mono text-boost">{formatDateTime(event.start).short}</span>
+                    <span className="meta-label text-boost">{formatDateTime(event.start).short}</span>
                     {event.title}
                     <span aria-hidden className="text-ink-muted transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5">
                       ↗

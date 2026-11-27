@@ -50,12 +50,12 @@ function PersonCard({ person, highlight = false }: { person: Person; highlight?:
           />
         )}
         {highlight && (
-          <span className="label-mono absolute top-3 left-3 rounded-full bg-boost px-3 py-1.5 text-white">Staff</span>
+          <span className="meta-label absolute top-3 left-3 rounded-sm bg-boost px-3 py-1.5 text-white">Staff</span>
         )}
       </div>
       <figcaption className="mt-4">
         <p className="font-semibold text-ink">{person.name}</p>
-        <p className="label-mono mt-1 text-ink-muted">{person.role}</p>
+        <p className="meta-label mt-1 text-ink-muted">{person.role}</p>
         {person.email && (
           <a href={`mailto:${person.email}`} className="mt-2 inline-block text-sm text-ink underline decoration-line underline-offset-4 hover:decoration-boost">
             {person.email}

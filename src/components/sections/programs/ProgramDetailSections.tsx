@@ -32,7 +32,7 @@ export function ProgramDetailSections({ program }: { program: ProgramDetail }) {
                 <ol className="border-t border-line lg:col-span-8 lg:mt-12">
                   {block.items.map((item, i) => (
                     <li key={item.body} className="grid grid-cols-[2.5rem_1fr] gap-x-4 border-b border-line py-6">
-                      <span className="label-mono pt-1 text-boost">{String(i + 1).padStart(2, "0")}</span>
+                      <span className="meta-label pt-1 text-boost">{String(i + 1).padStart(2, "0")}</span>
                       <div>
                         {item.title && <p className="font-semibold text-ink">{item.title}</p>}
                         <p className={item.title ? "mt-1.5 leading-relaxed text-ink-soft" : "leading-relaxed text-ink"}>
@@ -57,12 +57,12 @@ export function ProgramDetailSections({ program }: { program: ProgramDetail }) {
               {program.schedule.days.map((day, i) => (
                 <Reveal key={day.label} delay={i * 0.08} y={14}>
                   <div className="h-full rounded-3xl border border-line bg-surface p-7">
-                    <p className="label-mono text-boost">Day {i + 1}</p>
+                    <p className="meta-label text-boost">Day {i + 1}</p>
                     <p className="heading mt-2 text-xl">{day.label}</p>
                     <ul className="mt-6 space-y-3">
                       {day.items.map(([time, what]) => (
                         <li key={time + what} className="flex gap-4">
-                          <span className="label-mono w-12 shrink-0 pt-0.5 text-ink-muted">{time}</span>
+                          <span className="meta-label w-12 shrink-0 pt-0.5 text-ink-muted">{time}</span>
                           <span className="text-ink-soft">{what}</span>
                         </li>
                       ))}
@@ -80,14 +80,14 @@ export function ProgramDetailSections({ program }: { program: ProgramDetail }) {
         <section className="px-3 pb-24 sm:px-6 sm:pb-32 lg:px-8">
           <div className="mx-auto grid max-w-7xl gap-10 overflow-hidden rounded-[2rem] bg-boost p-8 text-white sm:p-12 lg:grid-cols-12 lg:p-16">
             <div className="lg:col-span-5">
-              <p className="label-mono text-white/70">{program.highlight.eyebrow}</p>
+              <p className="meta-label text-white/70">{program.highlight.eyebrow}</p>
               <h2 className="heading mt-4 text-4xl sm:text-5xl">{program.highlight.title}</h2>
               <p className="mt-5 max-w-md leading-relaxed text-white/85">{program.highlight.body}</p>
             </div>
             <dl className="divide-y divide-white/20 border-y border-white/20 lg:col-span-7">
               {program.highlight.items.map((item) => (
                 <div key={item.label} className="grid gap-1 py-5 sm:grid-cols-[10rem_1fr] sm:gap-6">
-                  <dt className="label-mono pt-1 text-white/65">{item.label}</dt>
+                  <dt className="meta-label pt-1 text-white/65">{item.label}</dt>
                   <dd className="text-lg font-medium">{item.value}</dd>
                 </div>
               ))}
