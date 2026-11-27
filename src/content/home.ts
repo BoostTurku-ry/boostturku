@@ -1,8 +1,9 @@
+import type { BrandIconName } from "@/components/brand/BrandIcon";
 import { photos } from "./photos";
 import type { FaqItem, Photo, Program, Stat } from "./types";
 
 export const hero = {
-  kicker: "Student entrepreneurship society · Turku",
+  kicker: "Student entrepreneurship society",
   headline: {
     lead: "Where students",
     verb: "become",
@@ -13,21 +14,35 @@ export const hero = {
   primaryCta: { label: "Upcoming events", href: "/events" },
   secondaryCta: { label: "Become a member", href: "/get-involved" },
   highlights: [
-    { value: "476", label: "alumni" },
-    { value: "176", label: "companies founded" },
+    { value: "180+", label: "companies founded by alumni" },
+    { value: "€47M+", label: "raised by alumni startups" },
   ],
   meta: {
     place: "Turku, Finland",
     coordinates: "60.4518° N · 22.2666° E",
     established: "Est. 2009",
   },
-  /** Swipeable photo deck, first photo on top. */
-  photos: [
-    photos.rooftopCrew,
-    photos.journeyStage,
-    photos.siliconValley,
-    photos.eventNight,
-    photos.board2024,
+  /** Slow photo strip under the hero, in this order. Any aspect ratio works; all are shown at the same height. */
+  strip: [
+    photos.teamRedHoodies,
+    photos.journeyWinner,
+    photos.eventSelfie,
+    photos.boostSignSeaside,
+    photos.packedHall,
+    photos.boostHerCelebration,
+    photos.thumbsUp,
+    photos.goldenGate,
+    photos.demoDayGroup,
+    photos.femaleFounderEvening,
+    photos.boostBar,
+    photos.redVenueTalk,
+    photos.breakfastPrep,
+    photos.teamBlackHoodies,
+    photos.audienceSteps,
+    photos.boostHerHosts,
+    photos.winner2019,
+    photos.slackOffice,
+    photos.boostSignCelebration,
   ] satisfies Photo[],
 };
 
@@ -42,27 +57,30 @@ export const manifesto = {
   cta: { label: "Our story", href: "/about" },
 };
 
-export const waysIn = [
+export const waysIn: { step: string; title: string; icon: BrandIconName; body: string; cta: { label: string; href: string }; photo: Photo }[] = [
   {
     step: "01",
     title: "Attend",
+    icon: "event",
     body: "Talks, workshops, breakfasts and hackathons throughout the year. Every event is free and open to all.",
     cta: { label: "Browse events", href: "/events" },
-    photo: photos.firesideTalk,
+    photo: photos.packedHall,
   },
   {
     step: "02",
     title: "Build",
+    icon: "rocketLaunch",
     body: "Structured programs take you from first idea to a pitch in front of investors, with experienced coaches.",
     cta: { label: "Explore programs", href: "/programs" },
-    photo: photos.hackathon,
+    photo: photos.demoDaySpeaker,
   },
   {
     step: "03",
     title: "Contribute",
+    icon: "groups",
     body: "Become a member, volunteer or join the board. Boost is run by students, and shaped by the people in it.",
     cta: { label: "Get involved", href: "/get-involved" },
-    photo: photos.crewOnStage,
+    photo: photos.breakfastPrep,
   },
 ];
 
@@ -75,7 +93,7 @@ export const programs: Program[] = [
       "An intensive eight-week, on-site accelerator for early-stage teams, ending in a Demo Day for investors. Free, with no equity taken.",
     when: "June–August",
     href: "/programs/startup-journey",
-    photo: photos.startupJourney2024,
+    photo: photos.journeyWinner,
   },
   {
     slug: "startup-marathon",
@@ -85,7 +103,7 @@ export const programs: Program[] = [
       "Form a team, validate an idea with real customers and pitch it within one weekend. No prior experience needed.",
     when: "March",
     href: "/programs/startup-marathon",
-    photo: photos.hackathon,
+    photo: photos.outdoorCrowd,
   },
   {
     slug: "omahomma",
@@ -95,7 +113,7 @@ export const programs: Program[] = [
       "A flexible summer program for turning your skills or side project into income, with weekly check-ins and coaching.",
     when: "Apply March–May",
     href: "/programs/omahomma",
-    photo: photos.omaHommaGroup,
+    photo: photos.slackOffice,
   },
   {
     slug: "boosther",
@@ -105,28 +123,30 @@ export const programs: Program[] = [
       "Workshops, mentoring and founder nights that lower the threshold for women and underrepresented founders.",
     when: "Year-round",
     href: "https://boosther.boostturku.com",
-    photo: photos.terraceHangout,
+    photo: photos.boostHerCelebration,
   },
 ];
 
 export const stats: Stat[] = [
-  { value: 476, label: "Boost alumni" },
-  { value: 176, label: "Companies founded by alumni" },
-  { value: 47, prefix: "€", suffix: "M", label: "VC raised by alumni companies" },
+  { value: 180, suffix: "+", label: "Companies founded by alumni" },
+  { value: 47, prefix: "€", suffix: "M+", label: "VC raised by alumni companies" },
+  { value: 66, prefix: "€", suffix: "M+", label: "Alumni company revenue in 2023" },
   { value: 60, suffix: "+", label: "Free events organised in 2026" },
 ];
 
 export const galleryPhotos: Photo[] = [
-  photos.welcomeNight,
-  photos.journeyStage,
-  photos.terraceHangout,
-  photos.board2024,
-  photos.keynoteStage,
-  photos.siliconValley,
-  photos.rooftopSunset,
-  photos.startupJourney2024,
-  photos.crewOnStage,
-  photos.hackathon,
+  photos.boostSignCelebration,
+  photos.redLightDuo,
+  photos.boostHerHosts,
+  photos.goldenGate,
+  photos.femaleFounderNight,
+  photos.teamBlackHoodies,
+  photos.eventSelfie,
+  photos.sponsorWall,
+  photos.thumbsUp,
+  photos.boardByTheWater,
+  photos.crewBoostBanner,
+  photos.boostHerPanel,
 ];
 
 export const faq: FaqItem[] = [
@@ -138,7 +158,7 @@ export const faq: FaqItem[] = [
   {
     question: "Is there a cost to participate?",
     answer:
-      "No. All events and programs are free, and we never take equity. Boost Turku ry is a non-profit funded by our partners, primarily the University of Turku and Business Turku.",
+      "No. All events and programs are free, and we never take equity. Boost Turku ry is a non-profit supported by our partners, led by the City of Turku, Business Turku and Turku Startup Hub.",
   },
   {
     question: "Do I need a startup idea to get involved?",
