@@ -70,7 +70,7 @@ Professional and minimal, with a community feel that comes from the photography 
   - **No gradients.** The brandbook's gradient glows were tried and dropped.
   - Tokens live in `globals.css`.
 - **Type:**
-  - **Axis** (caps only) is for brand moments only: the hero headline and big numbers (`heading-display`).
+  - **Archivo Expanded** (extra bold capitals, open licence) is for brand moments only: the hero headline and big numbers (`heading-display`).
   - **Clash Display** (brand) is for section and card headings (`heading`) and small caps labels (`meta-label`).
   - **Switzer** Light (brand) is the body text.
   - Fonts are served from our own domain. Clash Display and Switzer (Fontshare licence) are downloaded into `src/assets/fonts` by `scripts/fetch-fonts.mjs` before `dev` and `build`, because their licence doesn't allow redistributing the files in a public repo.
@@ -158,7 +158,7 @@ Not covered by the MIT licence:
 - **The Boost name, logo and brand** are Boost Turku ry's and may not be used to represent another organisation.
 - **Fonts:**
   - Clash Display and Switzer are under ITF's Fontshare licence and aren't stored in this repo.
-  - Axis (`src/assets/fonts/Axis-Extrabold.otf`) is the brand display face carried over from the old site. Its licence still needs to be confirmed.
+  - Archivo (headline and numbers) is under the SIL Open Font License and is downloaded by Next.js at build time.
 - **Partner and alumni company logos** (`public/images/partners`, `public/images/alumni`) are trademarks of their owners, shown only to identify them.
 - **React Bits components** (`src/components/reactbits/`) are © David Haz under their own licence (MIT + Commons Clause, see the folder's `LICENSE.md`).
 - **Icons:** Material Symbols paths in `src/components/brand/BrandIcon.tsx` are © Google under the Apache License 2.0. The Telegram and Discord glyphs come from Simple Icons (CC0) and are trademarks of their owners.

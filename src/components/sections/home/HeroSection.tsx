@@ -32,7 +32,7 @@ export function HeroSection({ nextEvent }: { nextEvent?: LumaEvent }) {
           <h1 className="sr-only">
             {hero.headline.lead} {hero.headline.verb} {hero.headline.rotating[0]}
           </h1>
-          <div aria-hidden className="heading-display text-[clamp(2.75rem,min(6.4vw,10svh),6rem)] leading-[0.94]">
+          <div aria-hidden className="heading-display text-[clamp(2.5rem,min(5.8vw,9.5svh),5.5rem)] leading-[0.95]">
             <BlurText
               text={hero.headline.lead}
               animateBy="words"

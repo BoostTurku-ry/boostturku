@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { site } from "@/content/site";
 import { themeInitScript } from "@/lib/theme";
-import { axis, clashDisplay, switzer } from "@/styles/fonts";
+import { archivo, clashDisplay, switzer } from "@/styles/fonts";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -25,7 +25,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       lang="en"
       data-theme="light"
       suppressHydrationWarning
-      className={`${axis.variable} ${clashDisplay.variable} ${switzer.variable} h-full antialiased`}
+      className={`${archivo.variable} ${clashDisplay.variable} ${switzer.variable} h-full antialiased`}
     >
       <head>
         {/* Applies the saved theme (light by default) before first paint, so there is no flash. */}

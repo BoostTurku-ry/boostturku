@@ -89,7 +89,7 @@
 }
 
 @theme inline {
-  --font-display: var(--font-axis), "Arial Black", system-ui, sans-serif; /* hero headline, big numbers (caps only) */
+  --font-display: var(--font-archivo), "Arial Black", system-ui, sans-serif; /* hero headline, big numbers */
   --font-heading: var(--font-clash), Arial, system-ui, sans-serif; /* section and card headings, labels */
   --font-sans: var(--font-switzer), system-ui, sans-serif;
 }
@@ -140,10 +140,13 @@
 }
 
 @layer utilities {
-  /* Axis (caps only): brand moments — the hero headline and big numbers. */
+  /* Brand moments (hero headline, big numbers): Archivo Expanded, extra bold capitals. */
   .heading-display {
     font-family: var(--font-display);
-    letter-spacing: -0.02em;
+    font-stretch: 112.5%;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: -0.015em;
     line-height: 1.02;
   }
 

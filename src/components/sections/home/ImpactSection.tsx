@@ -28,7 +28,7 @@ export function ImpactSection() {
                 <span>{stat.label}</span>
                 <span className="hidden text-white/30 lg:inline">{String(i + 1).padStart(2, "0")}</span>
               </dt>
-              <dd className="heading-display mt-6 text-6xl sm:text-7xl">
+              <dd className="heading-display mt-6 text-5xl sm:text-6xl lg:text-[clamp(2.75rem,4.2vw,3.75rem)]">
                 <CountUp
                   to={stat.value}
                   prefix={stat.prefix}

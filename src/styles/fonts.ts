@@ -1,11 +1,16 @@
+import { Archivo } from "next/font/google";
 import localFont from "next/font/local";
 
-/** Axis (caps only): the hero headline and big numbers. */
-export const axis = localFont({
-  src: "../assets/fonts/Axis-Extrabold.otf",
-  weight: "800",
-  style: "normal",
-  variable: "--font-axis",
+/**
+ * Archivo (SIL Open Font License) at its widest setting: the hero headline and
+ * big numbers, set in capitals. Downloaded by Next.js at build time and served
+ * from our own domain; no font file is stored in this repo.
+ */
+export const archivo = Archivo({
+  subsets: ["latin", "latin-ext"],
+  weight: "variable",
+  axes: ["wdth"],
+  variable: "--font-archivo",
   display: "swap",
 });
 
