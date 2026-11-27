@@ -3,10 +3,8 @@ import { site } from "./site";
 /**
  * Privacy documents. Section bodies are Markdown (rendered on the server).
  *
- * TODO(boost) before launch:
- * - When the forms are connected, name the services that receive submissions
- *   (e.g. the email provider or Google Workspace) in the "Who can see it" sections.
- * - Review both documents whenever data handling changes, and update `updated`.
+ * Keep these in step with how data is actually handled: if a service provider
+ * changes (hosting, database, email), update the "Who can see" sections and `updated`.
  */
 
 export type LegalSection = { id: string; title: string; body: string };
@@ -72,7 +70,7 @@ Boost Turku ry is a non-profit, student-run entrepreneurship society. Questions 
       title: "Visiting the website",
       body: `You can browse the whole site without giving us any personal data.
 
-Like any website, the server that delivers these pages automatically processes technical information about each request: your IP address, browser and device type, the page requested and the time. This is needed to deliver the site and keep it secure, and it is kept only for a limited time for security and troubleshooting. We don't use it to identify visitors.
+The website is hosted by Vercel. Like any website, the servers that deliver these pages automatically process technical information about each request: your IP address, browser and device type, the page requested and the time. This is needed to deliver the site and keep it secure, and it is kept only for a limited time for security and troubleshooting. We don't use it to identify visitors.
 
 **Legal basis:** our legitimate interest in running a working, secure website (GDPR Art. 6(1)(f)).`,
     },
@@ -102,6 +100,19 @@ We use these only to read and answer your message, and to follow up on what you 
       body: `When you join Boost through the membership form, your details are added to our member register. How we handle member data is described in its own notice: [Member register privacy notice](/privacy/members).`,
     },
     {
+      id: "applications",
+      title: "Applying to programs and the board",
+      body: `When you apply to Startup Journey, Startup Marathon, OmaHomma, the Proof of Concept grant, the board or the chairperson role, we receive your **name, email address and your answers** to that round's questions.
+
+The Boost board uses them to select participants or candidates and to contact you about your application. Applications aren't shared outside Boost.
+
+**Chairperson candidates:** if you agree to it in the form, your name and the answers marked for the candidates page (such as your studies and your vision for Boost) may be published on this website before the association meeting. You can ask us to take them down at any time.
+
+**Legal basis:** taking steps at your request to take part in a program or run for the board (GDPR Art. 6(1)(b)), and your consent for publishing a chair candidate profile (Art. 6(1)(a)).
+
+**How long we keep it:** applications are deleted 12 months after the application round closes. If you're selected, we keep what's needed to run the program or the board term.`,
+    },
+    {
       id: "events",
       title: "Events and registration",
       body: `Our events are published on [lu.ma](https://lu.ma/boost). If you register for an event there, Luma processes your registration under [its own privacy policy](https://luma.com/privacy-policy), and as the organiser we see the details you give in the registration (typically your name and email) so we can run the event. We use them only for that event and related practical messages.
@@ -122,7 +133,13 @@ If you'd rather not be photographed, tell the photographer or an organiser at th
       title: "Who can see your data",
       body: `Only the Boost board and volunteers who need it for their role can access personal data. We never sell or rent personal data.
 
-We use trusted service providers to run the website, email and file storage. They process data only on our behalf and under data processing agreements. Some of them may process data outside the EU/EEA; in that case the transfer is protected by safeguards required by the GDPR, such as the European Commission's standard contractual clauses.`,
+These service providers process data on our behalf, under data processing agreements:
+
+- **Vercel** hosts the website. Our server code runs in Vercel's Stockholm region.
+- **Supabase** stores contact messages and the member register in its EU region (Stockholm).
+- **Resend** delivers the emails the website sends, such as membership confirmations and notifications to the board.
+
+Vercel and Resend are US companies, so some data may be processed outside the EU/EEA. Those transfers are protected by safeguards required by the GDPR, such as the European Commission's standard contractual clauses.`,
     },
     {
       id: "security",
@@ -167,7 +184,8 @@ The board of Boost Turku ry is responsible for the member register. Contact it a
 - **Email address**
 - **Where you study** (or that you aren't a student)
 - **What you're interested in** at Boost, if you choose any (events, programs, volunteering, joining the board)
-- **The date you joined**, and later the date your membership ends
+- **The date you joined** and gave consent, and later the date your membership ends
+- **Short notes** the board may add for running the association, for example that you volunteer at events
 
 We don't ask for your home address, phone number, date of birth or student number.`,
     },
@@ -196,7 +214,7 @@ We don't ask for your home address, phone number, date of birth or student numbe
       title: "Who can see it",
       body: `The board of Boost Turku ry and the volunteers who need it for their role. Member data is **not sold, rented or handed to sponsors or partners**.
 
-The register is stored with service providers who process it on our behalf under data processing agreements. If any of them process data outside the EU/EEA, the transfer is protected by the safeguards the GDPR requires, such as standard contractual clauses.
+The register is stored in **Supabase**, in its EU region (Stockholm). The welcome email and board notifications are sent through **Resend**, and the website runs on **Vercel**. These providers process data only on our behalf, under data processing agreements. Vercel and Resend are US companies; any transfer outside the EU/EEA is protected by the safeguards the GDPR requires, such as standard contractual clauses.
 
 Under the Associations Act, members may have the right to see the member register in connection with association matters.`,
     },
@@ -210,7 +228,7 @@ When a membership ends we remove the person's details from the register within 1
     {
       id: "security",
       title: "How the register is protected",
-      body: `The register is kept in access-controlled digital systems. Only people who need it for their Boost role can open it, each with their own credentials, and access is reviewed whenever the board changes. No paper copies are kept.`,
+      body: `The register is kept in an access-controlled database. Only board members on the admin access list can open it, each signing in with their own email, and the list is updated whenever the board changes. Backup copies are kept where only the board can reach them. No paper copies are kept.`,
     },
     { id: "rights", title: "Your rights", body: rights },
   ],
