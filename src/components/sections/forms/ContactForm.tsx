@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { useActionState } from "react";
+import { Honeypot } from "@/components/ui/Honeypot";
 import { FormField, Select, Textarea } from "@/components/ui/FormField";
 import { submitContact, type FormState } from "@/lib/forms";
 import { cn } from "@/lib/cn";
@@ -22,7 +23,8 @@ export function ContactForm() {
   }
 
   return (
-    <form action={action} noValidate className="grid gap-6 sm:grid-cols-2">
+    <form action={action} noValidate className="relative grid gap-6 sm:grid-cols-2">
+      <Honeypot />
       <FormField label="Full name" name="name" autoComplete="name" error={e.name} />
       <FormField label="Email" name="email" type="email" autoComplete="email" error={e.email} />
       <FormField label="What's it about?" name="topic" className="sm:col-span-2">
@@ -35,6 +37,12 @@ export function ContactForm() {
       <FormField label="Message" name="message" error={e.message} className="sm:col-span-2">
         <Textarea name="message" error={e.message} placeholder="Tell us what's on your mind…" />
       </FormField>
+      {state.status === "error" && state.message && (
+        <p role="alert" className="rounded-md border border-boost/30 bg-boost-soft p-4 text-sm text-ink sm:col-span-2">
+          {state.message}
+        </p>
+      )}
+
       <div className="sm:col-span-2">
         <button
           type="submit"

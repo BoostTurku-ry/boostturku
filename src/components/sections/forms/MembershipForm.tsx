@@ -2,21 +2,11 @@
 
 import Link from "next/link";
 import { useActionState } from "react";
+import { Honeypot } from "@/components/ui/Honeypot";
 import { FormField, Select } from "@/components/ui/FormField";
+import { interests, schools } from "@/content/membership";
 import { submitMembership, type FormState } from "@/lib/forms";
 import { cn } from "@/lib/cn";
-
-const schools = [
-  "University of Turku",
-  "Turku University of Applied Sciences",
-  "Åbo Akademi University",
-  "Novia University of Applied Sciences",
-  "HUMAK",
-  "Another school",
-  "Not a student",
-];
-
-const interests = ["Events", "Programs", "Volunteering", "Joining the board"];
 
 export function MembershipForm() {
   const [state, action, pending] = useActionState<FormState, FormData>(submitMembership, { status: "idle" });
@@ -32,7 +22,8 @@ export function MembershipForm() {
   }
 
   return (
-    <form action={action} noValidate className="grid gap-6 sm:grid-cols-2">
+    <form action={action} noValidate className="relative grid gap-6 sm:grid-cols-2">
+      <Honeypot />
       <FormField label="Full name" name="name" autoComplete="name" error={e.name} />
       <FormField label="Email" name="email" type="email" autoComplete="email" error={e.email} />
       <FormField label="Where do you study?" name="school" error={e.school} className="sm:col-span-2">
@@ -62,7 +53,7 @@ export function MembershipForm() {
 
       <div className="sm:col-span-2">
         <label className="flex items-start gap-3 text-sm text-ink-soft">
-          <input type="checkbox" name="consent" className="mt-0.5 size-4 accent-[var(--color-boost)]" />
+          <input type="checkbox" name="consent" className="mt-0.5 size-4 accent-boost" />
           <span>
             Boost Turku ry may store my details in its member register and contact me about Boost activities.{" "}
             <Link href="/privacy/members" className="text-ink underline decoration-line underline-offset-4 hover:decoration-boost">
@@ -72,6 +63,12 @@ export function MembershipForm() {
         </label>
         {e.consent && <p className="mt-1.5 text-sm text-boost">{e.consent}</p>}
       </div>
+
+      {state.status === "error" && state.message && (
+        <p role="alert" className="rounded-md border border-boost/30 bg-boost-soft p-4 text-sm text-ink sm:col-span-2">
+          {state.message}
+        </p>
+      )}
 
       <div className="sm:col-span-2">
         <button
