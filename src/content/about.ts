@@ -6,7 +6,7 @@ export const aboutHero = {
   title: "A student-run home for first-time founders.",
   intro:
     "Boost Turku is a non-profit entrepreneurship society run by students in Turku. Since 2009 we've helped students meet each other, test ideas and start companies, and everything we do is free.",
-  photo: photos.crewOnStage,
+  photo: photos.boostSignSeaside,
 };
 
 export const story = {
@@ -63,12 +63,16 @@ export const director: Person = {
 };
 
 export const partners = {
+  /** Main partners. Logos are white versions for the burgundy partners section. */
   key: [
-    { name: "Business Turku", logo: "/images/partners/business-turku.png", href: "https://businessturku.fi" },
-    { name: "University of Turku", logo: "/images/partners/university-of-turku.png", href: "https://www.utu.fi" },
     { name: "City of Turku", logo: "/images/partners/city-of-turku.png", href: "https://www.turku.fi" },
+    { name: "Business Turku", logo: "/images/partners/business-turku.png", href: "https://businessturku.fi" },
+    { name: "Turku Startup Hub", logo: "/images/partners/turku-startup-hub.png", href: "https://startupturku.com" },
   ],
-  other: [{ name: "Turku University of Applied Sciences", logo: "/images/partners/turku-amk.png", href: "https://www.tuas.fi" }],
+  other: [
+    { name: "University of Turku", logo: "/images/partners/university-of-turku.png", href: "https://www.utu.fi" },
+    { name: "Turku University of Applied Sciences", logo: "/images/partners/turku-amk.png", href: "https://www.tuas.fi" },
+  ],
 };
 
 export const ecosystem = {

@@ -4,9 +4,8 @@ import { SectionHeading } from "@/components/ui/SectionHeading";
 import { ecosystem, partners } from "@/content/about";
 
 export function PartnersSection() {
-  const all = [...partners.key, ...partners.other];
   return (
-    <section className="bg-night text-white">
+    <section data-header-dark className="bg-night text-white">
       <Container size="wide" className="py-24 sm:py-32">
         <SectionHeading
           index={3}
@@ -16,27 +15,17 @@ export function PartnersSection() {
           intro="Our partners fund Boost's work, which is why every event and program costs participants nothing and we never take equity."
         />
 
-        <ul className="mt-16 grid grid-cols-2 gap-px overflow-hidden rounded-3xl border border-white/10 bg-white/10 lg:grid-cols-4">
-          {all.map((p, i) => (
-            <li key={p.name} className="bg-night">
-              <a
-                href={p.href}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="group flex h-40 flex-col justify-between p-6 transition-colors hover:bg-white/[0.04] sm:h-48"
-              >
-                <span className="label-mono text-white/40">{i < partners.key.length ? "Key partner" : "Partner"}</span>
-                <span className="relative block h-14 w-full">
-                  <Image
-                    src={p.logo}
-                    alt={p.name}
-                    fill
-                    sizes="240px"
-                    className="object-contain object-left opacity-80 transition-opacity group-hover:opacity-100"
-                  />
-                </span>
-              </a>
-            </li>
+        <p className="meta-label mt-16 text-white/45">Main partners</p>
+        <ul className="mt-4 grid gap-px overflow-hidden rounded-3xl border border-white/10 bg-white/10 sm:grid-cols-3">
+          {partners.key.map((p) => (
+            <PartnerTile key={p.name} partner={p} size="lg" />
+          ))}
+        </ul>
+
+        <p className="meta-label mt-10 text-white/45">Also supported by</p>
+        <ul className="mt-4 grid grid-cols-2 gap-px overflow-hidden rounded-2xl border border-white/10 bg-white/10">
+          {partners.other.map((p) => (
+            <PartnerTile key={p.name} partner={p} size="sm" />
           ))}
         </ul>
 
@@ -56,5 +45,31 @@ export function PartnersSection() {
         </div>
       </Container>
     </section>
+  );
+}
+
+type Partner = (typeof partners.key)[number];
+
+function PartnerTile({ partner, size }: { partner: Partner; size: "lg" | "sm" }) {
+  return (
+    <li className="bg-night">
+      <a
+        href={partner.href}
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label={partner.name}
+        className={size === "lg" ? "group flex h-44 items-center p-8 transition-colors hover:bg-white/[0.04] sm:h-52" : "group flex h-28 items-center p-6 transition-colors hover:bg-white/[0.04]"}
+      >
+        <span className={size === "lg" ? "relative block h-16 w-full max-w-[13rem] sm:h-20" : "relative block h-10 w-full max-w-[9rem]"}>
+          <Image
+            src={partner.logo}
+            alt={partner.name}
+            fill
+            sizes="300px"
+            className="object-contain object-left opacity-80 transition-opacity group-hover:opacity-100"
+          />
+        </span>
+      </a>
+    </li>
   );
 }

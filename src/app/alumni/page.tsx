@@ -6,17 +6,19 @@ import { JoinSection } from "@/components/sections/shared/JoinSection";
 import { PageHero } from "@/components/sections/shared/PageHero";
 import { Container } from "@/components/ui/Container";
 import { SectionHeading } from "@/components/ui/SectionHeading";
+import { PhotoMarquee } from "@/components/sections/shared/PhotoMarquee";
+import { gallery } from "@/content/gallery";
 import { photos } from "@/content/photos";
 import { getAllPosts } from "@/lib/posts";
 
 export const metadata: Metadata = {
   title: "Alumni",
-  description: "476 Boost alumni have founded 176 companies. Meet some of them.",
+  description: "Boost alumni have founded more than 180 companies. Meet some of them.",
 };
 
 const stats = [
-  { value: 476, label: "Boost alumni" },
-  { value: 176, label: "Companies founded" },
+  { value: 180, suffix: "+", label: "Companies founded" },
+  { value: 17, label: "Years of founders" },
   { value: 66.7, prefix: "€", suffix: "M", decimals: 1, label: "Combined revenue, 2023" },
   { value: 47.2, prefix: "€", suffix: "M", decimals: 1, label: "Venture capital raised" },
 ];
@@ -30,7 +32,7 @@ export default async function AlumniPage() {
         eyebrow="Alumni"
         title="What Boosters build next."
         intro="Boost alumni include Startup Journey founders, former board members and people from the wider community. Many come back as coaches and mentors."
-        photo={photos.startupJourney2024}
+        photo={photos.demoDayGroup}
       >
         <dl className="grid grid-cols-2 gap-px overflow-hidden rounded-3xl border border-line bg-line lg:grid-cols-4">
           {stats.map((stat) => (
@@ -38,11 +40,13 @@ export default async function AlumniPage() {
               <dd className="heading-display text-4xl text-ink sm:text-5xl">
                 <CountUp to={stat.value} prefix={stat.prefix} suffix={stat.suffix} decimals={stat.decimals} duration={1.8} trigger="view" />
               </dd>
-              <dt className="label-mono mt-3 text-ink-muted">{stat.label}</dt>
+              <dt className="meta-label mt-3 text-ink-muted">{stat.label}</dt>
             </div>
           ))}
         </dl>
       </PageHero>
+
+      <PhotoMarquee photos={gallery.alumni} className="pb-24 sm:pb-32" heightClass="h-52 sm:h-64" duration={55} />
 
       <section className="border-t border-line py-24 sm:py-32">
         <Container size="wide">
@@ -74,7 +78,7 @@ export default async function AlumniPage() {
                     href={`/blog/${post.slug}`}
                     className="group flex h-full flex-col rounded-3xl border border-line bg-paper p-7 transition-colors hover:border-boost/40"
                   >
-                    <span className="label-mono text-boost">Boost Tales</span>
+                    <span className="meta-label text-boost">Boost Tales</span>
                     <span className="heading mt-4 text-2xl group-hover:text-boost">
                       {post.title.replace(/^Boost Tales:\s*/, "")}
                     </span>

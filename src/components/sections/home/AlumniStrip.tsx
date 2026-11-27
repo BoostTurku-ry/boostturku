@@ -7,8 +7,8 @@ export function AlumniStrip() {
   return (
     <section aria-label="Companies founded by Boost alumni" className="border-y border-line bg-surface">
       <Container size="wide" className="grid items-center gap-6 py-8 md:grid-cols-12 md:gap-10">
-        <p className="label-mono text-ink-muted md:col-span-3">
-          <span className="text-ink">176 companies</span>
+        <p className="meta-label text-ink-muted md:col-span-3">
+          <span className="text-ink">180+ companies</span>
           <br className="hidden md:block" /> founded by Boost alumni, including
         </p>
         {/* Logos as one-colour silhouettes: black in light mode (colour on hover), white in dark mode. */}
