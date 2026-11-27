@@ -559,7 +559,12 @@ function FlowingMenu({
 
   useEffect(() => {
     const loop = engine.current;
-    return () => cancelAnimationFrame(loop.raf);
+    // PATCH(boost): reset the handle too. Under React StrictMode (dev) effects run
+    // twice; without this, `kick()` sees a stale non-zero handle and never restarts.
+    return () => {
+      cancelAnimationFrame(loop.raf);
+      loop.raf = 0;
+    };
   }, []);
 
   const onPointerMove = (event: ReactPointerEvent<HTMLUListElement>) => {
