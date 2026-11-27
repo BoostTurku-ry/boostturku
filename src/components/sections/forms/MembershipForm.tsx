@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { useActionState } from "react";
 import { FormField, Select } from "@/components/ui/FormField";
 import { submitMembership, type FormState } from "@/lib/forms";
@@ -62,7 +63,12 @@ export function MembershipForm() {
       <div className="sm:col-span-2">
         <label className="flex items-start gap-3 text-sm text-ink-soft">
           <input type="checkbox" name="consent" className="mt-0.5 size-4 accent-[var(--color-boost)]" />
-          Boost Turku ry may store my details in its member register and contact me about Boost activities.
+          <span>
+            Boost Turku ry may store my details in its member register and contact me about Boost activities.{" "}
+            <Link href="/privacy/members" className="text-ink underline decoration-line underline-offset-4 hover:decoration-boost">
+              How we handle member data
+            </Link>
+          </span>
         </label>
         {e.consent && <p className="mt-1.5 text-sm text-boost">{e.consent}</p>}
       </div>

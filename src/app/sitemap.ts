@@ -5,7 +5,7 @@ import { getAllPosts } from "@/lib/posts";
 const BASE = "https://www.boostturku.com";
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-  const pages = ["", "/about", "/programs", "/events", "/alumni", "/blog", "/get-involved", "/contact"];
+  const pages = ["", "/about", "/programs", "/events", "/alumni", "/blog", "/get-involved", "/contact", "/privacy", "/privacy/members"];
   const posts = await getAllPosts();
   return [
     ...pages.map((p) => ({ url: `${BASE}${p}` })),

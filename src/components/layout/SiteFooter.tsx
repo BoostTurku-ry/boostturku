@@ -59,7 +59,12 @@ export function SiteFooter() {
         </div>
 
         <div className="meta-label mt-16 flex flex-col gap-3 border-t border-white/10 pt-6 text-white/45 sm:flex-row sm:justify-between">
-          <p>© {site.legalName} · Made by students, for students</p>
+          <p>
+            © {site.legalName} ·{" "}
+            <Link href="/privacy" className="text-white/70 hover:text-white">
+              Privacy
+            </Link>
+          </p>
           <p>Main partners: City of Turku, Business Turku &amp; Turku Startup Hub</p>
           <a href="#main" className="group inline-flex items-center gap-2 text-white/70 hover:text-white">
             Back to top

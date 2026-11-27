@@ -3,6 +3,8 @@ import type { NavLink } from "./types";
 export const site = {
   name: "Boost Turku",
   legalName: "Boost Turku ry",
+  /** Business ID (Y-tunnus). */
+  businessId: "2321515-1",
   description:
     "Boost Turku is a student-run entrepreneurship society. Free events, accelerator programs and a community for students in Turku who want to build things.",
   email: "info@boostturku.com",

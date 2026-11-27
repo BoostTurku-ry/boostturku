@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { useActionState } from "react";
 import { FormField, Select, Textarea } from "@/components/ui/FormField";
 import { submitContact, type FormState } from "@/lib/forms";
@@ -46,6 +47,12 @@ export function ContactForm() {
           {pending ? "Sending…" : "Send message"}
           <span aria-hidden>→</span>
         </button>
+        <p className="mt-4 text-sm text-ink-muted">
+          We only use your details to reply.{" "}
+          <Link href="/privacy#contact" className="underline decoration-line underline-offset-4 hover:text-ink hover:decoration-boost">
+            Privacy policy
+          </Link>
+        </p>
       </div>
     </form>
   );
