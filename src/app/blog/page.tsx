@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { gallery } from "@/content/gallery";
 import { PostCard } from "@/components/sections/blog/PostCard";
 import { PageHero } from "@/components/sections/shared/PageHero";
 import { Container } from "@/components/ui/Container";
@@ -31,24 +32,25 @@ export default async function BlogPage() {
         meta={`${posts.length} stories`}
         title="Stories from the community."
         intro="Startup Journey teams, alumni interviews, board news and lessons learned, written by Boosters over the years."
+        photo={gallery.stories}
       />
 
       <section className="pb-24 sm:pb-32">
         <Container size="wide">
           {featured && (
             <div className="border-b border-line pb-16">
-              <p className="label-mono mb-6 text-boost">Latest</p>
+              <p className="meta-label mb-6 text-boost">Latest</p>
               <PostCard post={featured} size="feature" />
             </div>
           )}
 
           {/* Year index */}
-          <nav aria-label="Jump to year" className="label-mono mt-10 flex flex-wrap gap-2 text-ink-muted">
+          <nav aria-label="Jump to year" className="meta-label mt-10 flex flex-wrap gap-2 text-ink-muted">
             {years.map(([year, list]) => (
               <a
                 key={year}
                 href={`#y${year}`}
-                className="rounded-full border border-line bg-surface px-3 py-1.5 hover:border-ink/30 hover:text-ink"
+                className="rounded-sm border border-line bg-surface px-3 py-1.5 hover:border-ink/30 hover:text-ink"
               >
                 {year} <span className="text-ink-muted/70">· {list.length}</span>
               </a>
@@ -60,7 +62,7 @@ export default async function BlogPage() {
               <div key={year} id={`y${year}`} className="scroll-mt-28">
                 <div className="flex items-baseline gap-4 border-t border-line pt-4">
                   <h2 className="heading-display text-3xl text-ink">{year}</h2>
-                  <span className="label-mono text-ink-muted">{list.length} {list.length === 1 ? "story" : "stories"}</span>
+                  <span className="meta-label text-ink-muted">{list.length} {list.length === 1 ? "story" : "stories"}</span>
                 </div>
                 <ul className="mt-10 grid gap-x-8 gap-y-12 sm:grid-cols-2 lg:grid-cols-3">
                   {list.map((post) => (

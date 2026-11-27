@@ -5,7 +5,7 @@ export const involvedHero = {
   title: "Membership is free, and so is everything else.",
   intro:
     "Join as a member to hear about opportunities first and have a say in how Boost is run. If you want to do more, volunteer at events or run for the board.",
-  photo: photos.rooftopSunset,
+  photo: photos.boostBar,
 };
 
 export const memberPerks = [

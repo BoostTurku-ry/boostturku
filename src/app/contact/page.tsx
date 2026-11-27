@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { ContactForm } from "@/components/sections/forms/ContactForm";
 import { PageHero } from "@/components/sections/shared/PageHero";
+import { PhotoMosaic } from "@/components/sections/shared/PhotoMosaic";
+import { gallery } from "@/content/gallery";
 import { Container } from "@/components/ui/Container";
 import { contacts, site } from "@/content/site";
 
@@ -22,7 +24,7 @@ export default function ContactPage() {
         <Container size="wide" className="grid gap-14 lg:grid-cols-12 lg:gap-10">
           {/* Form */}
           <div className="rounded-3xl border border-line bg-surface p-6 sm:p-10 lg:col-span-7">
-            <p className="label-mono text-ink-muted">Send a message</p>
+            <p className="meta-label text-ink-muted">Send a message</p>
             <p className="heading mt-3 mb-8 text-3xl">We read everything.</p>
             <ContactForm />
           </div>
@@ -30,11 +32,11 @@ export default function ContactPage() {
           {/* Details */}
           <div className="space-y-12 lg:col-span-5">
             <div>
-              <p className="label-mono text-ink-muted">Email directly</p>
+              <p className="meta-label text-ink-muted">Email directly</p>
               <ul className="mt-4 border-t border-line">
                 {contacts.map((c) => (
                   <li key={c.email} className="border-b border-line py-4">
-                    <p className="label-mono text-boost">{c.topic}</p>
+                    <p className="meta-label text-boost">{c.topic}</p>
                     <p className="mt-1.5 text-ink-soft">{c.name}</p>
                     <a href={`mailto:${c.email}`} className="mt-0.5 inline-block font-medium text-ink underline decoration-line underline-offset-4 hover:decoration-boost">
                       {c.email}
@@ -45,7 +47,7 @@ export default function ContactPage() {
             </div>
 
             <div>
-              <p className="label-mono text-ink-muted">Find us</p>
+              <p className="meta-label text-ink-muted">Find us</p>
               <p className="heading mt-4 text-2xl">{site.address.venue}</p>
               <p className="mt-1 text-ink-soft">
                 {site.address.street}, {site.address.city}
@@ -57,7 +59,7 @@ export default function ContactPage() {
             </div>
 
             <div>
-              <p className="label-mono text-ink-muted">Follow</p>
+              <p className="meta-label text-ink-muted">Follow</p>
               <ul className="mt-4 flex flex-wrap gap-2">
                 {site.socials.map((s) => (
                   <li key={s.href}>
@@ -65,7 +67,7 @@ export default function ContactPage() {
                       href={s.href}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex rounded-full border border-line bg-surface px-4 py-2 text-sm text-ink-soft hover:border-ink/30 hover:text-ink"
+                      className="inline-flex rounded-sm border border-line bg-surface px-4 py-2 text-sm text-ink-soft hover:border-ink/30 hover:text-ink"
                     >
                       {s.label} ↗
                     </a>
@@ -74,6 +76,9 @@ export default function ContactPage() {
               </ul>
             </div>
           </div>
+        </Container>
+        <Container size="wide" className="mt-20 sm:mt-24">
+          <PhotoMosaic photos={gallery.contact} />
         </Container>
       </section>
     </>

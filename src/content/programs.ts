@@ -13,7 +13,7 @@ export const programDetails: ProgramDetail[] = [
     summary:
       "An intensive accelerator for early-stage teams, held on-site in Turku every summer since 2011. It's free, and we never take equity.",
     status: { label: "2026 round completed · next round summer 2027", tone: "next" },
-    photo: photos.journeyStage,
+    photo: photos.demoDaySpeaker,
     facts: [
       { label: "Format", value: "On-site in Turku" },
       { label: "Length", value: "About 8 weeks" },
@@ -84,7 +84,7 @@ export const programDetails: ProgramDetail[] = [
     summary:
       "A weekend for students who want to know what building a business from scratch feels like. No experience and no idea needed, just curiosity.",
     status: { label: "Held every March · 2027 date to be announced", tone: "next" },
-    photo: photos.hackathon,
+    photo: photos.outdoorCrowd,
     facts: [
       { label: "Length", value: "42 hours, Friday to Sunday" },
       { label: "2026 venue", value: "Edu-City, Joukahaisenkatu 7" },
@@ -161,7 +161,7 @@ export const programDetails: ProgramDetail[] = [
     summary:
       "A flexible summer program for students who want to earn their summer income from their own skills, ideas or side project instead of a traditional job.",
     status: { label: "Applications in spring 2027", tone: "next" },
-    photo: photos.omaHommaGroup,
+    photo: photos.slackOffice,
     facts: [
       { label: "When", value: "Summer" },
       { label: "Early round", value: "March – April" },
@@ -204,7 +204,7 @@ export const programDetails: ProgramDetail[] = [
     summary:
       "A 2026 pilot with the City of Turku: up to €5,000 for students and researchers to test whether an early business idea can work.",
     status: { label: "2026 applications closed", tone: "closed" },
-    photo: photos.keynoteStage,
+    photo: photos.winner2019,
     facts: [
       { label: "Grant", value: "Up to €5,000 per idea" },
       { label: "2026 budget", value: "€30,000 in total" },

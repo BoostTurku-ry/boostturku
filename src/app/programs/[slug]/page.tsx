@@ -1,4 +1,7 @@
 import type { Metadata } from "next";
+import { PhotoMosaic } from "@/components/sections/shared/PhotoMosaic";
+import { Container } from "@/components/ui/Container";
+import { gallery } from "@/content/gallery";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ProgramDetailSections } from "@/components/sections/programs/ProgramDetailSections";
@@ -55,7 +58,7 @@ export default async function ProgramPage({ params }: PageProps<"/programs/[slug
         <dl className="grid grid-cols-2 gap-px overflow-hidden rounded-3xl border border-line bg-line lg:grid-cols-4">
           {program.facts.map((fact) => (
             <div key={fact.label} className="bg-surface p-6">
-              <dt className="label-mono text-ink-muted">{fact.label}</dt>
+              <dt className="meta-label text-ink-muted">{fact.label}</dt>
               <dd className="mt-2 font-semibold text-ink">{fact.value}</dd>
             </div>
           ))}
@@ -63,6 +66,13 @@ export default async function ProgramPage({ params }: PageProps<"/programs/[slug
       </PageHero>
 
       <ProgramDetailSections program={program} />
+      {gallery.programs[program.slug] && (
+        <section className="pb-24 sm:pb-32">
+          <Container size="wide">
+            <PhotoMosaic photos={gallery.programs[program.slug]} />
+          </Container>
+        </section>
+      )}
 
       {program.faq && <FaqSection items={program.faq} />}
       <JoinSection />

@@ -38,7 +38,7 @@ export default function ProgramsPage() {
                       sizes="(min-width: 768px) 46vw, 92vw"
                     />
                     <div className="mt-6 flex flex-wrap items-center justify-between gap-3">
-                      <span className="label-mono text-ink-muted">
+                      <span className="meta-label text-ink-muted">
                         {String(i + 1).padStart(2, "0")} · {program.tagline}
                       </span>
                       <StatusPill label={program.status.label} tone={program.status.tone} />
@@ -64,9 +64,9 @@ export default function ProgramsPage() {
                 rel="noopener noreferrer"
                 className="group grid overflow-hidden rounded-3xl border border-line bg-surface md:grid-cols-2"
               >
-                <Photo photo={photos.terraceHangout} zoomOnHover className="aspect-[16/10] rounded-none md:aspect-auto md:h-full" sizes="(min-width: 768px) 46vw, 92vw" />
+                <Photo photo={photos.boostHerPanel} zoomOnHover className="aspect-[16/10] rounded-none md:aspect-auto md:h-full" sizes="(min-width: 768px) 46vw, 92vw" />
                 <div className="flex flex-col justify-center p-8 sm:p-12">
-                  <span className="label-mono text-ink-muted">Diversity in entrepreneurship</span>
+                  <span className="meta-label text-ink-muted">Diversity in entrepreneurship</span>
                   <h2 className="heading mt-4 text-3xl group-hover:text-boost sm:text-4xl">
                     BoostHer <span aria-hidden className="text-xl">↗</span>
                   </h2>
