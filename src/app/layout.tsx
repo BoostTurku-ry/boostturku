@@ -1,7 +1,4 @@
 import type { Metadata } from "next";
-import { SiteFooter } from "@/components/layout/SiteFooter";
-import { ScrollBar } from "@/components/layout/ScrollBar";
-import { SiteHeader } from "@/components/layout/SiteHeader";
 import { site } from "@/content/site";
 import { themeInitScript } from "@/lib/theme";
 import { axis, clashDisplay, switzer } from "@/styles/fonts";
@@ -31,23 +28,10 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       className={`${axis.variable} ${clashDisplay.variable} ${switzer.variable} h-full antialiased`}
     >
       <head>
-        {/* Applies the saved / system theme before first paint (no flash). */}
+        {/* Applies the saved theme (light by default) before first paint, so there is no flash. */}
         <script dangerouslySetInnerHTML={{ __html: themeInitScript }} />
       </head>
-      <body className="flex min-h-full flex-col">
-        <a
-          href="#main"
-          className="sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-[100] focus:rounded-sm focus:bg-ink focus:px-4 focus:py-2 focus:text-paper"
-        >
-          Skip to content
-        </a>
-        <SiteHeader />
-        <main id="main" className="flex-1 overflow-x-clip">
-          {children}
-        </main>
-        <SiteFooter />
-        <ScrollBar />
-      </body>
+      <body className="flex min-h-full flex-col">{children}</body>
     </html>
   );
 }
