@@ -46,3 +46,8 @@ next-env.d.ts
 .eslintcache
 .turbo
 .swc
+
+# Brand fonts under the Fontshare licence: downloaded at dev/build time by
+# scripts/fetch-fonts.mjs, never committed (the licence restricts redistribution).
+/src/assets/fonts/ClashDisplay-*.woff2
+/src/assets/fonts/Switzer-*.woff2

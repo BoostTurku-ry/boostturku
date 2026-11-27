@@ -13,8 +13,10 @@ export const axis = localFont({
  * Boost brand typography (see the brandbook):
  * - Clash Display: section and card headings, small functional labels.
  * - Switzer: body copy and interface text (Light for paragraphs).
- * Both are from Fontshare (ITF Free Font License, free for commercial and web use)
- * and are self-hosted from src/assets/fonts.
+ * Both are from Fontshare (ITF licence: free for commercial and web use, including
+ * self-hosting, but the font files may not be redistributed). They're served from
+ * our own domain, and downloaded into src/assets/fonts at dev/build time by
+ * scripts/fetch-fonts.mjs rather than committed to this public repo.
  */
 export const clashDisplay = localFont({
   src: [
