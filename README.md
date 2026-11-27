@@ -73,7 +73,7 @@ Professional and minimal, with a community feel that comes from the photography 
   - **Axis** (caps only) is for brand moments only: the hero headline and big numbers (`heading-display`).
   - **Clash Display** (brand) is for section and card headings (`heading`) and small caps labels (`meta-label`).
   - **Switzer** Light (brand) is the body text.
-  - Fonts are self-hosted from `src/assets/fonts`; Clash Display and Switzer are from Fontshare (free licence).
+  - Fonts are served from our own domain. Clash Display and Switzer (Fontshare licence) are downloaded into `src/assets/fonts` by `scripts/fetch-fonts.mjs` before `dev` and `build`, because their licence doesn't allow redistributing the files in a public repo.
 - **Icons:** Material Symbols in solid Boost red, used sparingly next to headlines (`components/brand/BrandIcon`).
 - **Photos:** real community photos, used on every page, cropped cleanly with rounded corners. No captions, tilts or overlays.
   - The originals are in `../Boost High Res Pics`. Resized copies (2000px max) are registered in `src/content/photos.ts`.
@@ -146,3 +146,17 @@ Forms save to **Supabase** (free plan), emails go through **Resend**, and the si
 - [x] Application rounds for programs, board and chairperson, with public apply pages and a chair candidates page
 - [x] Privacy policy and member register notice (`/privacy`, `/privacy/members`)
 - [ ] BoostHer pages (currently links to boosther.boostturku.com)
+
+## Licence
+
+The **source code** is released under the [MIT licence](LICENSE), © Boost Turku ry. You're welcome to learn from it or reuse it, for example for another student entrepreneurship society.
+
+Not covered by the MIT licence:
+
+- **Content:** texts, stories, program descriptions and the privacy pages are © Boost Turku ry.
+- **Photos** in `public/images` belong to Boost Turku ry and the photographers, and show real people. Don't reuse them.
+- **The Boost name, logo and brand** are Boost Turku ry's and may not be used to represent another organisation.
+- **Fonts:**
+  - Clash Display and Switzer are under ITF's Fontshare licence and aren't stored in this repo.
+  - Axis (`src/assets/fonts/Axis-Extrabold.otf`) is the brand display face carried over from the old site. Its licence still needs to be confirmed.
+- **React Bits components** (`src/components/reactbits/`) are © David Haz under their own licence (MIT + Commons Clause, see the folder's `LICENSE.md`).

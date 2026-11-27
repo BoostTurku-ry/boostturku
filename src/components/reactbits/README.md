@@ -3,6 +3,10 @@
 Animated components copied from [reactbits.dev](https://reactbits.dev) (TypeScript + Tailwind variants, fetched from
 `https://reactbits.dev/r/<Name>-TS-TW.json` on 2026-11-12).
 
+**Licence:** these components are © David Haz, under the React Bits licence (MIT + Commons Clause), included in
+[`LICENSE.md`](./LICENSE.md). They may be used as part of this website, but not sold or redistributed on their own.
+This folder is **not** covered by the repository's MIT licence.
+
 **Rules for this folder**
 
 - These files are third-party code. Keep them as close to upstream as possible so they can be refreshed.
