@@ -62,7 +62,7 @@ export function SiteHeader() {
           scrolled || open
             ? dark
               ? "h-14 border-white/10 bg-burgundy/70 shadow-[0_8px_30px_-12px_rgb(0_0_0/0.5)] backdrop-blur-xl"
-              : "h-14 border-line bg-surface/80 shadow-[0_8px_30px_-12px_rgb(37_3_26/0.18)] backdrop-blur-xl"
+              : "h-14 border-line bg-paper/85 shadow-[0_8px_30px_-12px_rgb(37_3_26/0.18)] backdrop-blur-xl"
             : "h-16 border-transparent bg-transparent",
         )}
       >

@@ -4,12 +4,10 @@
 @custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
 
 /* ------------------------------------------------------------------
-   Boost Turku design tokens, from the Boost brandbook.
-   Primary: Boost Red #D52636, Boost Burgundy #25031A, white.
-   Secondary: Boost Ultra Red #FF4145, Boost Beige #EDE8D8.
-   Light pages with burgundy text; always-dark sections are flat burgundy.
-   No gradients.
-   Every token is redefined for dark mode below.
+   Boost Turku design tokens. Brand colours: Boost Red #D52636, Boost Burgundy #25031A.
+   Light: white pages, burgundy text, light warm-grey surfaces, flat burgundy dark sections.
+   Dark: neutral warm near-black (no burgundy tint) with the brighter Boost red.
+   No gradients. Every token is redefined for dark mode below.
    ------------------------------------------------------------------ */
 @theme {
   --color-boost: #d52636; /* Boost Red */
@@ -21,11 +19,17 @@
   --color-ink: #25031a; /* main text: Boost Burgundy — flips to light in dark mode */
   --color-ink-soft: #5c4152;
   --color-ink-muted: #8d7684;
-  --color-paper: #f7f4ec; /* page background: a light tint of Boost Beige */
-  --color-surface: #ffffff; /* cards, raised areas */
-  --color-line: #e5ddcd; /* hairline borders */
+  --color-paper: #ffffff; /* page background */
+  --color-surface: #f6f5f3; /* cards and alternating sections: a barely-warm light grey */
+  --color-line: #e9e6e1; /* hairline borders */
   --color-night: #25031a; /* always-dark sections: Boost Burgundy */
   --color-night-raised: #3a0a2c; /* cards and shapes on burgundy */
+
+  /* BoostHer sub-brand, from its logo: Boost red with a navy script "Her", on soft pink. */
+  --color-her: #f6cdd6; /* light pink: hover bands, dots, accents */
+  --color-her-soft: #fdf1f3; /* pale pink section background */
+  --color-her-ink: #1f2f7a; /* navy accent text */
+  --color-her-night: #1a2358; /* navy panels */
 
   --radius-card: 1rem;
 
@@ -59,17 +63,21 @@
 }
 
 [data-theme="dark"] {
-  --color-boost: #ff4145;
-  --color-boost-dark: #d52636;
-  --color-boost-soft: #3d0a22;
-  --color-ink: #f6f1e6;
-  --color-ink-soft: #cdbcc2;
-  --color-ink-muted: #9a8390;
-  --color-paper: #1d0215;
-  --color-surface: #2a061f;
-  --color-line: #44142f;
-  --color-night: #140010;
-  --color-night-raised: #2e0722;
+  --color-boost: #ff4a52;
+  --color-boost-dark: #e0323b;
+  --color-boost-soft: #33161a;
+  --color-ink: #f3f0ed;
+  --color-ink-soft: #bcb5b1;
+  --color-ink-muted: #8a837f;
+  --color-paper: #0f0e0e;
+  --color-surface: #181616;
+  --color-line: #2b2828;
+  --color-night: #1b1919; /* "always-dark" sections sit a step above the page */
+  --color-night-raised: #262323;
+  --color-her: #f2c3ce;
+  --color-her-soft: #1c1618;
+  --color-her-ink: #b4c0ff;
+  --color-her-night: #171d3d;
 }
 
 :root {
@@ -89,9 +97,10 @@
 }
 
 @theme inline {
-  --font-display: var(--font-archivo), "Arial Black", system-ui, sans-serif; /* hero headline, big numbers */
-  --font-heading: var(--font-clash), Arial, system-ui, sans-serif; /* section and card headings, labels */
-  --font-sans: var(--font-switzer), system-ui, sans-serif;
+  --font-display: var(--font-bricolage), system-ui, sans-serif; /* hero headline, big numbers */
+  --font-heading: var(--font-bricolage), system-ui, sans-serif; /* page, section and card headings */
+  --font-sans: var(--font-instrument), system-ui, sans-serif; /* body, interface, small labels */
+  --font-serif: var(--font-instrument-serif), Georgia, serif; /* BoostHer accents only; the font loads on that page */
 }
 
 @layer base {
@@ -103,7 +112,7 @@
     background-color: var(--color-paper);
     color: var(--color-ink);
     font-family: var(--font-sans);
-    font-weight: 300; /* Switzer Light is the brand's body style */
+    font-weight: 400;
     -webkit-font-smoothing: antialiased;
   }
 
@@ -140,30 +149,30 @@
 }
 
 @layer utilities {
-  /* Brand moments (hero headline, big numbers): Archivo Expanded, extra bold capitals. */
+  /* Brand moments (hero headline, big numbers): Bricolage Grotesque, extra bold. */
   .heading-display {
     font-family: var(--font-display);
-    font-stretch: 112.5%;
+    /* Always the large "display" cut, so widths don't change with screen size. */
+    font-variation-settings: "opsz" 96;
     font-weight: 800;
-    text-transform: uppercase;
-    letter-spacing: -0.015em;
-    line-height: 1.02;
+    letter-spacing: -0.03em;
+    line-height: 1;
   }
 
-  /* Section and card headings: Clash Display, Medium, sentence case. */
+  /* Page, section and card headings: Bricolage Grotesque, bold, tight. */
   .heading {
     font-family: var(--font-heading);
-    font-weight: 500;
-    letter-spacing: -0.005em;
-    line-height: 1.05;
+    font-weight: 700;
+    letter-spacing: -0.025em;
+    line-height: 1.04;
   }
 
-  /* Small functional labels: indices, dates, meta. Clash Display Regular, caps. */
+  /* Small functional labels: dates, meta. Instrument Sans, medium caps. */
   .meta-label {
-    font-family: var(--font-heading);
+    font-family: var(--font-sans);
     font-size: 0.75rem;
     font-weight: 500;
-    letter-spacing: 0.07em;
+    letter-spacing: 0.08em;
     line-height: 1.3;
     text-transform: uppercase;
   }
@@ -185,8 +194,8 @@
   margin-top: 2em;
   color: var(--color-ink);
   font-family: var(--font-heading);
-  font-weight: 500;
-  letter-spacing: -0.02em;
+  font-weight: 700;
+  letter-spacing: -0.025em;
   line-height: 1.2;
 }
 .prose-boost h1,

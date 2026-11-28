@@ -40,11 +40,6 @@ export function SiteFooter() {
                 </a>
               </li>
             ))}
-            {!site.community.discord.href && (
-              <li className="text-white/40">
-                Discord <span className="meta-label ml-1 text-[10px]">Soon</span>
-              </li>
-            )}
           </FooterColumn>
 
           <FooterColumn title="Find us">
@@ -65,7 +60,7 @@ export function SiteFooter() {
               Privacy
             </Link>
           </p>
-          <p>Main partners: City of Turku, Business Turku &amp; Turku Startup Hub</p>
+          <p>Key partners: City of Turku, Business Turku &amp; Turku Startup Hub</p>
           <a href="#main" className="group inline-flex items-center gap-2 text-white/70 hover:text-white">
             Back to top
             <span aria-hidden className="transition-transform group-hover:-translate-y-0.5">

@@ -31,14 +31,13 @@ src/
 │   ├── layout/             SiteHeader, SiteFooter, ScrollBar (the site's own page scrollbar)
 │   ├── motion/             Our own small animation helpers (Reveal…)
 │   ├── reactbits/          Third-party React Bits components (vendored, see its README)
-│   ├── sections/<page>/    Page sections, grouped by page (home, about, alumni, blog, programs, forms)
+│   ├── sections/<page>/    Page sections, grouped by page (home, about, alumni, boosther, programs, forms)
 │   ├── sections/shared/    Sections used on several pages (PageHero, FAQ, Join, EventCard…)
 │   └── ui/                 Reusable primitives: Button, Badge, Container, Photo, SectionHeading
 ├── content/                All copy and data, typed. No JSX here.
-│   ├── posts/              Stories as Markdown (103 posts imported from the old site)
 │   └── events-snapshot.json  Fallback archive if lu.ma is unreachable
 ├── hooks/                  Reusable React hooks (useMediaQuery…)
-├── lib/                    Helpers: posts (Markdown), luma (live events), forms (server actions), email, env, dates, theme
+├── lib/                    Helpers: markdown, luma (live events), forms (server actions), email, env, dates, theme
 │   ├── supabase/           Supabase clients (signed-in board member, and secret-key client for trusted writes)
 │   └── admin/              Admin access check, data queries and server actions
 ├── proxy.ts                Refreshes the board's session on /admin pages
@@ -64,18 +63,18 @@ public/images/
 Professional and minimal, with a community feel that comes from the photography rather than decoration.
 
 - **Colours** (from the Boost brandbook, `../Boost Turku Brandbook + Guidelines.pdf`):
-  - Text is Boost Burgundy `#25031A` on a light beige-tinted paper `#F7F4EC`, with white surfaces.
+  - Text is Boost Burgundy `#25031A` on white pages, with light warm-grey surfaces `#F6F5F3`.
   - The one accent is Boost Red `#D52636`.
   - Always-dark sections (Impact, Join, Partners, footer) are flat burgundy.
+  - Dark mode uses a neutral warm near-black, not the brandbook's burgundy tints.
   - **No gradients.** The brandbook's gradient glows were tried and dropped.
   - Tokens live in `globals.css`.
 - **Type:**
-  - **Archivo Expanded** (extra bold capitals, open licence) is for brand moments only: the hero headline and big numbers (`heading-display`).
-  - **Clash Display** (brand) is for section and card headings (`heading`) and small caps labels (`meta-label`).
-  - **Switzer** Light (brand) is the body text.
-  - Fonts are served from our own domain. Clash Display and Switzer (Fontshare licence) are downloaded into `src/assets/fonts` by `scripts/fetch-fonts.mjs` before `dev` and `build`, because their licence doesn't allow redistributing the files in a public repo.
+  - **Bricolage Grotesque** is for headings (`heading`), the hero headline and big numbers (`heading-display`).
+  - **Instrument Sans** is for body text, interface text and small caps labels (`meta-label`).
+  - Both are under the SIL Open Font License, loaded with `next/font/google` and served from our own domain. The brandbook fonts (Clash Display, Switzer) aren't used.
 - **Icons:** Material Symbols in solid Boost red, used sparingly next to headlines (`components/brand/BrandIcon`).
-- **Photos:** real community photos, used on every page, cropped cleanly with rounded corners. No captions, tilts or overlays.
+- **Photos:** real community photos, used on every page, with rounded corners and no captions. Page headers show a small stack of prints (the only tilt). Set `focus` on a photo when a crop would cut someone off.
   - The originals are in `../Boost High Res Pics`. Resized copies (2000px max) are registered in `src/content/photos.ts`.
   - Extra page sets (mosaics and strips) are in `src/content/gallery.ts`.
   - Use `PhotoMosaic` (one large photo plus two or four) or `PhotoMarquee` (a slow strip that pauses on hover).
@@ -84,10 +83,10 @@ Professional and minimal, with a community feel that comes from the photography 
   - The hero is a centred statement whose last word rotates (`RotatingText`), over an edge-to-edge strip of community photos that drifts slowly and pauses on hover (`HeroPhotoStrip`, photos set in `hero.strip`).
   - The manifesto resolves word by word as you scroll (`ScrollReveal`).
   - The programs index shows a red marquee band on hover (`FlowingMenu`).
-- **Button order:** one primary (red) and one secondary (outline) per block, at most. Anything else, such as the Telegram and Discord links, is a tertiary text button (`ghost`), set apart by a hairline. `CommunityButtons` takes `emphasis="secondary" | "tertiary"` for this.
+- **Button order:** one primary (red) and one secondary (outline) per block, at most. Anything else, such as the Telegram and WhatsApp links, is a tertiary text button (`ghost`), set apart by a hairline. `CommunityButtons` takes `emphasis="secondary" | "tertiary"` for this.
 - **Components:** flat, square-cornered buttons (`rounded-sm`), thin borders, no heavy shadows or stickers. Anything wrapping a button uses a radius of 4px plus its padding (the header is `rounded-xl` around 8px of padding).
 - **Header:** a floating glass pill (`position: fixed`), so **every page's first section must reserve top space** (the home hero uses `pt-28`).
-- **Atmosphere:** a very faint film grain (React Bits `Noise`) behind the home hero and page headers. No gradients, glows or cursor effects.
+- **Atmosphere:** none. Clean white pages; the community photos carry the mood. No grain, gradients, glows or cursor effects.
 - **Themes:** light and dark via `<html data-theme>`. Every colour token is redefined in `globals.css`. Use the `night` token for always-dark sections.
 - **Motion:** subtle, and everything respects `prefers-reduced-motion`.
 
@@ -98,8 +97,7 @@ The text, photos and history behind this site come from the knowledgebase in `..
 ## Data sources
 
 - **Events** come live from the public lu.ma calendar (`src/lib/luma.ts`) and are cached for an hour. If lu.ma can't be reached, the archive falls back to `events-snapshot.json`, and upcoming events show a link to lu.ma rather than claiming nothing is scheduled.
-- **Community chats** (Telegram, Discord) are in `site.community` in `src/content/site.ts`. Discord shows as "Soon" until its `href` is set.
-- **Stories** are Markdown files in `src/content/posts/`. Add a post by adding a file with the same frontmatter fields; images go in `public/images/blog/`.
+- **Community chats** (the Telegram channel and the WhatsApp community) are in `site.community` in `src/content/site.ts`.
 - **Programs, board, partners and alumni** are typed data in `src/content/`. Update program `status` and dates each season.
 
 ## Backend and admin
@@ -141,11 +139,10 @@ Forms save to **Supabase** (free plan), emails go through **Resend**, and the si
 
 ## Status
 
-- [x] Home, About, Programs (+ Startup Journey, Startup Marathon, OmaHomma, PoC Grant), Events, Alumni, Stories (+ 103 posts), Get involved, Contact, 404, sitemap
+- [x] Home, About, Programs (+ Startup Journey, Startup Marathon, OmaHomma, PoC Grant), Events, Alumni, BoostHer, Get involved, Contact, 404, sitemap
 - [x] Forms, member register and board admin (Supabase, Resend, Vercel): code complete; needs the one-time setup above before launch
 - [x] Application rounds for programs, board and chairperson, with public apply pages and a chair candidates page
 - [x] Privacy policy and member register notice (`/privacy`, `/privacy/members`)
-- [ ] BoostHer pages (currently links to boosther.boostturku.com)
 
 ## Licence
 
@@ -153,14 +150,12 @@ The **source code** is released under the [MIT licence](LICENSE), © Boost Turku
 
 Not covered by the MIT licence:
 
-- **Content:** texts, stories, program descriptions and the privacy pages are © Boost Turku ry.
+- **Content:** texts, program descriptions and the privacy pages are © Boost Turku ry.
 - **Photos** in `public/images` belong to Boost Turku ry and the photographers, and show real people. Don't reuse them.
 - **The Boost name, logo and brand** are Boost Turku ry's and may not be used to represent another organisation.
-- **Fonts:**
-  - Clash Display and Switzer are under ITF's Fontshare licence and aren't stored in this repo.
-  - Archivo (headline and numbers) is under the SIL Open Font License and is downloaded by Next.js at build time.
+- **Fonts:** Bricolage Grotesque and Instrument Sans are under the SIL Open Font License and are downloaded by Next.js at build time; no font files are stored in this repo.
 - **Partner and alumni company logos** (`public/images/partners`, `public/images/alumni`) are trademarks of their owners, shown only to identify them.
 - **React Bits components** (`src/components/reactbits/`) are © David Haz under their own licence (MIT + Commons Clause, see the folder's `LICENSE.md`).
-- **Icons:** Material Symbols paths in `src/components/brand/BrandIcon.tsx` are © Google under the Apache License 2.0. The Telegram and Discord glyphs come from Simple Icons (CC0) and are trademarks of their owners.
+- **Icons:** Material Symbols paths in `src/components/brand/BrandIcon.tsx` are © Google under the Apache License 2.0. The Telegram and WhatsApp glyphs come from Simple Icons (CC0) and are trademarks of their owners.
 
 Dependencies are installed from npm and aren't stored in this repo. They're MIT-licensed except GSAP, which uses its own [no-charge licence](https://gsap.com/standard-license) that allows use on websites.
