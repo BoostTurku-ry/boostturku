@@ -5,17 +5,14 @@ import type { FaqItem } from "@/content/types";
 
 type FaqSectionProps = {
   items: FaqItem[];
-  index?: number;
   title?: string;
 };
 
-export function FaqSection({ items, index, title = "Frequently asked questions" }: FaqSectionProps) {
+export function FaqSection({ items, title = "Frequently asked questions" }: FaqSectionProps) {
   return (
-    <section className="py-24 sm:py-32">
+    <section className="py-14 sm:py-20">
       <Container size="wide" className="grid gap-12 lg:grid-cols-12 lg:gap-10">
         <SectionHeading
-          index={index}
-          eyebrow="FAQ"
           layout="stack"
           className="lg:col-span-5"
           title={title}

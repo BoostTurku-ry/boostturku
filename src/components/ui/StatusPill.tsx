@@ -29,3 +29,13 @@ export function StatusPill({ label, tone, className }: StatusPillProps) {
     </span>
   );
 }
+
+/** The same status as quiet text with a dot, for cards. */
+export function StatusLine({ label, tone, className }: StatusPillProps) {
+  return (
+    <span className={cn("inline-flex items-center gap-2 text-sm text-ink-muted", className)}>
+      <span aria-hidden className={cn("size-1.5 shrink-0 rounded-full", tone === "open" ? "animate-pulse bg-boost" : "bg-ink/30")} />
+      {label}
+    </span>
+  );
+}

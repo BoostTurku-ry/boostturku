@@ -35,9 +35,9 @@ export default async function EventsPage() {
       <EventsHeader upcomingCount={upcoming ? upcoming.length : null} />
 
       {/* Upcoming */}
-      <section className="pb-24 sm:pb-32">
+      <section className="pb-14 sm:pb-20">
         <Container size="wide">
-          <SectionHeading index={1} eyebrow="Upcoming" title="Next on the calendar" />
+          <SectionHeading title="Next on the calendar" />
           <div className="mt-12 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
             {upcoming?.map((event) => (
               <EventCard key={event.id} event={event} />
@@ -46,16 +46,14 @@ export default async function EventsPage() {
             <CalendarCard showCalendarLink={false} />
           </div>
         </Container>
-        <PhotoMarquee photos={gallery.events} className="mt-20 sm:mt-24" heightClass="h-52 sm:h-64" duration={60} />
+        <PhotoMarquee photos={gallery.events} className="mt-14 sm:mt-20" heightClass="h-52 sm:h-64" duration={60} />
       </section>
 
       {/* Past */}
       {past.length > 0 && (
-        <section className="border-t border-line bg-surface py-24 sm:py-32">
+        <section className="border-t border-line bg-surface py-14 sm:py-20">
           <Container size="wide">
             <SectionHeading
-              index={2}
-              eyebrow="Archive"
               title="Recently at Boost"
               intro="A look back at what the community has been up to."
               action={

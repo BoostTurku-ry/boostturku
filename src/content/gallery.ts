@@ -26,18 +26,23 @@ export const gallery = {
   /** Alumni: winners and Demo Day. */
   alumni: [photos.winner2019, photos.journeyWinner, photos.chequeOnStage, photos.demoDaySpeaker, photos.sponsorWall, photos.demoDayAudience],
   /** Contact page. One large + two. */
-  contact: [photos.crewBoostBanner, photos.redLightDuo, photos.boostSignToast],
+  contact: [photos.redLightDuo, photos.boostSignToast, photos.eventStand],
+  /** Page header stacks (PageHero): the first photo is the print in front. Keep them 3:2. */
+  heroes: {
+    programs: [photos.chequeOnStage, photos.demoDayAudience, photos.teamRedHoodies],
+    contact: [photos.crewBoostBanner, photos.teamRedHoodies, photos.sponsorWall],
+    events: [photos.packedHall, photos.audienceSteps, photos.demoDayAudience],
+    boosther: [photos.boostHerCelebration, photos.boostHerBrunch, photos.boostHerPanel],
+    alumni: [photos.winner2019, photos.demoDayGroup, photos.journeyWinner],
+    involved: [photos.boostBar, photos.eventStand, photos.goldenGate],
+  },
   /** Program pages: three photos each, shown after the program details. */
   programs: {
     "startup-journey": [photos.demoDayGroup, photos.journeyWinner, photos.demoDayAudience],
     "startup-marathon": [photos.chequeOnStage, photos.audienceSteps, photos.eventStand],
-    omahomma: [photos.eventSelfie, photos.breakfastPrep, photos.sponsorWall],
+    omahomma: [photos.sponsorWall, photos.eventSelfie, photos.breakfastPrep],
     "poc-grant": [photos.journeyWinner, photos.winner2019, photos.teamRedHoodies],
   } as Record<string, readonly Photo[]>,
-  /** Stories index header. */
-  stories: photos.demoDayAudience,
-  /** Events index header. */
-  eventsHero: photos.packedHall,
   /** 404. */
   notFound: photos.eventSelfie,
 };

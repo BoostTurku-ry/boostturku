@@ -10,17 +10,13 @@ const perks = [
   "Vote at meetings and run for the board",
 ];
 
-export function JoinSection({ index }: { index?: number }) {
+export function JoinSection() {
   return (
-    <section className="px-3 pb-24 sm:px-6 sm:pb-32 lg:px-8">
+    <section className="px-3 pb-14 sm:px-6 sm:pb-20 lg:px-8">
       <div className="relative isolate mx-auto grid max-w-7xl overflow-hidden rounded-[2rem] bg-night text-white lg:grid-cols-12">
 
         <div className="px-6 py-16 sm:px-12 sm:py-20 lg:col-span-7 lg:px-16 lg:py-24">
-          <p className="meta-label flex items-center gap-3 text-white/55">
-            {index !== undefined && <span className="text-white">({String(index).padStart(2, "0")})</span>}
-            Membership · Free
-          </p>
-          <h2 className="heading mt-5 max-w-xl text-4xl sm:text-[3.5rem]">Join the Boost community</h2>
+          <h2 className="heading max-w-xl text-4xl sm:text-[3.5rem]">Join the Boost community</h2>
           <ul className="mt-8 space-y-3">
             {perks.map((perk) => (
               <li key={perk} className="flex items-center gap-3 text-white/75">

@@ -5,6 +5,7 @@ import { BrandIcon } from "@/components/brand/BrandIcon";
 import Link from "next/link";
 import { useState } from "react";
 import { Container } from "@/components/ui/Container";
+import { DEFAULT_FOCUS } from "@/components/ui/Photo";
 import { CropMarks } from "@/components/ui/CropMarks";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { waysIn } from "@/content/home";
@@ -18,11 +19,9 @@ export function WaysInSection() {
   const [active, setActive] = useState(0);
 
   return (
-    <section className="pb-24 sm:pb-32">
+    <section className="pb-14 sm:pb-20">
       <Container size="wide">
         <SectionHeading
-          index={2}
-          eyebrow="Get involved"
           title="Three ways to be part of Boost"
           intro="There's no application to join the community. Start wherever it makes sense for you."
         />
@@ -42,6 +41,7 @@ export function WaysInSection() {
                       aria-hidden={i !== active}
                       fill
                       sizes="(min-width: 1024px) 38vw, 0px"
+                      style={{ objectPosition: item.photo.focus ?? DEFAULT_FOCUS }}
                       className={cn(
                         "object-cover transition-[opacity,transform] duration-700 ease-out",
                         i === active ? "scale-100 opacity-100" : "scale-[1.04] opacity-0",

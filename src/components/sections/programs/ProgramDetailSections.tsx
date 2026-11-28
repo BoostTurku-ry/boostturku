@@ -5,15 +5,12 @@ import type { ProgramDetail } from "@/content/types";
 
 /** Body of a program page: overview, content blocks, optional schedule and highlight. */
 export function ProgramDetailSections({ program }: { program: ProgramDetail }) {
-  let index = 0;
-  const next = () => ++index;
-
   return (
     <>
       {/* Overview */}
-      <section className="pb-24 sm:pb-32">
+      <section className="pb-14 sm:pb-20">
         <Container size="wide">
-          <SectionHeading index={next()} eyebrow="Overview" title={`About ${program.name}`} />
+          <SectionHeading title={`About ${program.name}`} />
           <div className="mt-10 grid gap-6 text-lg leading-relaxed text-ink-soft lg:grid-cols-2 lg:gap-10">
             {program.overview.map((p) => (
               <p key={p}>{p}</p>
@@ -24,12 +21,12 @@ export function ProgramDetailSections({ program }: { program: ProgramDetail }) {
 
       {/* Blocks */}
       {program.blocks.length > 0 && (
-        <section className="border-t border-line bg-surface py-24 sm:py-32">
+        <section className="border-t border-line bg-surface py-14 sm:py-20">
           <Container size="wide" className="space-y-20">
             {program.blocks.map((block) => (
               <div key={block.title} className="grid gap-10 lg:grid-cols-12 lg:gap-10">
-                <SectionHeading index={next()} eyebrow="Details" title={block.title} layout="stack" className="lg:col-span-4" />
-                <ol className="border-t border-line lg:col-span-8 lg:mt-12">
+                <SectionHeading title={block.title} layout="stack" className="lg:col-span-4" />
+                <ol className="border-t border-line lg:col-span-8">
                   {block.items.map((item, i) => (
                     <li key={item.body} className="grid grid-cols-[2.5rem_1fr] gap-x-4 border-b border-line py-6">
                       <span className="meta-label pt-1 text-boost">{String(i + 1).padStart(2, "0")}</span>
@@ -50,9 +47,9 @@ export function ProgramDetailSections({ program }: { program: ProgramDetail }) {
 
       {/* Schedule */}
       {program.schedule && (
-        <section className="py-24 sm:py-32">
+        <section className="py-14 sm:py-20">
           <Container size="wide">
-            <SectionHeading index={next()} eyebrow="Schedule" title={program.schedule.title} intro={program.schedule.intro} />
+            <SectionHeading title={program.schedule.title} intro={program.schedule.intro} />
             <div className="mt-14 grid gap-5 lg:grid-cols-3">
               {program.schedule.days.map((day, i) => (
                 <Reveal key={day.label} delay={i * 0.08} y={14}>
@@ -77,7 +74,7 @@ export function ProgramDetailSections({ program }: { program: ProgramDetail }) {
 
       {/* Highlight */}
       {program.highlight && (
-        <section className="px-3 pb-24 sm:px-6 sm:pb-32 lg:px-8">
+        <section className="px-3 py-14 sm:px-6 sm:py-20 lg:px-8">
           <div className="mx-auto grid max-w-7xl gap-10 overflow-hidden rounded-[2rem] bg-boost p-8 text-white sm:p-12 lg:grid-cols-12 lg:p-16">
             <div className="lg:col-span-5">
               <p className="meta-label text-white/70">{program.highlight.eyebrow}</p>

@@ -15,15 +15,16 @@ export default function ContactPage() {
   return (
     <>
       <PageHero
-        eyebrow="Contact"
         title="Talk to us."
+        accent="us."
         intro="Questions, a startup idea you want feedback on, or a partnership in mind? Send a message, email the right person directly, or find us at an event."
+        photos={gallery.heroes.contact}
       />
 
-      <section className="pb-24 sm:pb-32">
+      <section className="pb-14 sm:pb-20">
         <Container size="wide" className="grid gap-14 lg:grid-cols-12 lg:gap-10">
           {/* Form */}
-          <div className="rounded-3xl border border-line bg-surface p-6 sm:p-10 lg:col-span-7">
+          <div className="rounded-3xl border border-line bg-surface p-6 sm:p-10 lg:col-span-7 lg:self-start">
             <p className="meta-label text-ink-muted">Send a message</p>
             <p className="heading mt-3 mb-8 text-3xl">We read everything.</p>
             <ContactForm />
@@ -77,7 +78,7 @@ export default function ContactPage() {
             </div>
           </div>
         </Container>
-        <Container size="wide" className="mt-20 sm:mt-24">
+        <Container size="wide" className="mt-14 sm:mt-20">
           <PhotoMosaic photos={gallery.contact} />
         </Container>
       </section>

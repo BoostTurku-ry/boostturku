@@ -1,17 +1,17 @@
 import Image from "next/image";
 import { Reveal } from "@/components/motion/Reveal";
+import { ContactIcons } from "@/components/ui/ContactIcons";
 import { Container } from "@/components/ui/Container";
+import { PORTRAIT_FOCUS } from "@/components/ui/Photo";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { board, boardEmail, director } from "@/content/about";
 import type { Person } from "@/content/types";
 
 export function TeamSection() {
   return (
-    <section className="border-t border-line bg-surface py-24 sm:py-32">
+    <section className="border-t border-line bg-surface py-14 sm:py-20">
       <Container size="wide">
         <SectionHeading
-          index={2}
-          eyebrow="The team"
           title="Board 2026"
           intro="Boost is run by a student board elected each year at our fall association meeting, together with our executive director and head coach."
           action={
@@ -54,6 +54,7 @@ function PersonCard({ person, highlight = false }: { person: Person; highlight?:
             alt={person.name}
             fill
             sizes="(min-width: 1024px) 22vw, (min-width: 640px) 30vw, 45vw"
+            style={{ objectPosition: person.focus ?? PORTRAIT_FOCUS }}
             className="object-cover grayscale-[20%] transition duration-500 group-hover:scale-[1.03] group-hover:grayscale-0"
           />
         )}
@@ -61,29 +62,13 @@ function PersonCard({ person, highlight = false }: { person: Person; highlight?:
           <span className="meta-label absolute top-3 left-3 rounded-sm bg-boost px-3 py-1.5 text-white">Staff</span>
         )}
       </div>
-      <figcaption className="mt-4">
-        <p className="font-semibold text-ink">{person.name}</p>
-        <p className="meta-label mt-1 text-ink-muted">{person.role}</p>
-        {(person.email || person.linkedin) && (
-          <p className="mt-2 flex flex-wrap items-center gap-x-3 gap-y-1 text-sm">
-            {person.email && (
-              <a href={`mailto:${person.email}`} className="text-ink underline decoration-line underline-offset-4 hover:decoration-boost">
-                {person.email}
-              </a>
-            )}
-            {person.linkedin && (
-              <a
-                href={person.linkedin}
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label={`${person.name} on LinkedIn`}
-                className="meta-label text-ink-muted transition-colors hover:text-ink"
-              >
-                LinkedIn ↗
-              </a>
-            )}
-          </p>
-        )}
+      {/* Name and role on the left, contact icons in the opposite corner. */}
+      <figcaption className="mt-4 flex items-start justify-between gap-3">
+        <div className="min-w-0">
+          <p className="font-semibold text-ink">{person.name}</p>
+          <p className="meta-label mt-1 text-ink-muted">{person.role}</p>
+        </div>
+        <ContactIcons name={person.name} email={person.email} linkedin={person.linkedin} className="shrink-0" />
       </figcaption>
     </figure>
   );

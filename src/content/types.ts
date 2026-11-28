@@ -10,6 +10,11 @@ export type Photo = {
   /** Intrinsic size of the file in /public, used for aspect ratios. */
   width: number;
   height: number;
+  /**
+   * Where to anchor the crop (CSS object-position), for photos whose subject sits
+   * off-centre. Defaults to slightly above centre, where heads usually are.
+   */
+  focus?: string;
 };
 
 export type Program = {
@@ -49,6 +54,8 @@ export type Person = {
   name: string;
   role: string;
   photo?: string;
+  /** Crop anchor for the portrait (CSS object-position), for photos where the head is near an edge. */
+  focus?: string;
   email?: string;
   linkedin?: string;
 };
@@ -68,15 +75,6 @@ export type ProgramDetail = {
   schedule?: { title: string; intro?: string; days: { label: string; items: [string, string][] }[] };
   highlight?: { eyebrow: string; title: string; body: string; items: { label: string; value: string }[] };
   faq?: FaqItem[];
-};
-
-export type PostMeta = {
-  slug: string;
-  title: string;
-  date: string;
-  author: string;
-  excerpt: string;
-  cover?: string;
 };
 
 export type AlumniLogo = {

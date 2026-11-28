@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import { PhotoMosaic } from "@/components/sections/shared/PhotoMosaic";
 import { Container } from "@/components/ui/Container";
 import { gallery } from "@/content/gallery";
-import Link from "next/link";
 import { notFound } from "next/navigation";
 import { Suspense } from "react";
 import { ApplyStatus } from "@/components/sections/apply/ApplyStatus";
@@ -49,12 +48,7 @@ export default async function ProgramPage({ params }: PageProps<"/programs/[slug
   return (
     <>
       <PageHero
-        eyebrow={`Programs · ${program.tagline}`}
-        meta={
-          <Link href="/programs" className="hover:text-ink">
-            ← All programs
-          </Link>
-        }
+        back={{ href: "/programs", label: "All programs" }}
         title={program.name}
         intro={program.summary}
         actions={
@@ -66,7 +60,7 @@ export default async function ProgramPage({ params }: PageProps<"/programs/[slug
             staticStatus
           )
         }
-        photo={program.photo}
+        photos={[program.photo, ...(gallery.programs[program.slug] ?? []).filter((p) => p.src !== program.photo.src)]}
       >
         <dl className="grid grid-cols-2 gap-px overflow-hidden rounded-3xl border border-line bg-line lg:grid-cols-4">
           {program.facts.map((fact) => (
@@ -80,7 +74,7 @@ export default async function ProgramPage({ params }: PageProps<"/programs/[slug
 
       <ProgramDetailSections program={program} />
       {gallery.programs[program.slug] && (
-        <section className="pb-24 sm:pb-32">
+        <section className={program.highlight ? "pb-14 sm:pb-20" : "py-14 sm:py-20"}>
           <Container size="wide">
             <PhotoMosaic photos={gallery.programs[program.slug]} />
           </Container>

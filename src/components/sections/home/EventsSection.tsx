@@ -17,11 +17,9 @@ export function EventsSection({ upcoming, recent }: EventsSectionProps) {
   const next = upcoming?.slice(0, 2) ?? [];
 
   return (
-    <section className="py-24 sm:py-32">
+    <section className="py-14 sm:py-20">
       <Container size="wide">
         <SectionHeading
-          index={4}
-          eyebrow="Events"
           title="What's coming up"
           intro="Workshops, talks, community breakfasts and founder nights. Registration helps us plan, but everyone is welcome."
         />

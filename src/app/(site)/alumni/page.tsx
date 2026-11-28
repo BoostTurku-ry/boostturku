@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import CountUp from "@/components/reactbits/CountUp";
 import { CompanyWall } from "@/components/sections/alumni/CompanyWall";
 import { JoinSection } from "@/components/sections/shared/JoinSection";
@@ -8,8 +7,6 @@ import { Container } from "@/components/ui/Container";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { PhotoMarquee } from "@/components/sections/shared/PhotoMarquee";
 import { gallery } from "@/content/gallery";
-import { photos } from "@/content/photos";
-import { getAllPosts } from "@/lib/posts";
 
 export const metadata: Metadata = {
   title: "Alumni",
@@ -24,15 +21,14 @@ const stats = [
 ];
 
 export default async function AlumniPage() {
-  const tales = (await getAllPosts()).filter((p) => p.slug.startsWith("boost-tales-")).reverse();
 
   return (
     <>
       <PageHero
-        eyebrow="Alumni"
         title="What Boosters build next."
+        accent="build next."
         intro="Boost alumni include Startup Journey founders, former board members and people from the wider community. Many come back as coaches and mentors."
-        photo={photos.demoDayGroup}
+        photos={gallery.heroes.alumni}
       >
         <dl className="grid grid-cols-2 gap-px overflow-hidden rounded-3xl border border-line bg-line lg:grid-cols-4">
           {stats.map((stat) => (
@@ -46,13 +42,11 @@ export default async function AlumniPage() {
         </dl>
       </PageHero>
 
-      <PhotoMarquee photos={gallery.alumni} className="pb-24 sm:pb-32" heightClass="h-52 sm:h-64" duration={55} />
+      <PhotoMarquee photos={gallery.alumni} className="pb-14 sm:pb-20" heightClass="h-52 sm:h-64" duration={55} />
 
-      <section className="border-t border-line py-24 sm:py-32">
+      <section className="border-t border-line py-14 sm:py-20">
         <Container size="wide">
           <SectionHeading
-            index={1}
-            eyebrow="Companies"
             title="Founded by Boost alumni"
             intro="A selection of the companies started by people who came through Boost, from the newest Startup Journey cohort back to the early years."
           />
@@ -62,39 +56,7 @@ export default async function AlumniPage() {
         </Container>
       </section>
 
-      {tales.length > 0 && (
-        <section className="border-t border-line bg-surface py-24 sm:py-32">
-          <Container size="wide">
-            <SectionHeading
-              index={2}
-              eyebrow="Boost Tales"
-              title="In their own words"
-              intro="Interviews with alumni about their time at Boost and what came after."
-            />
-            <ul className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-              {tales.map((post) => (
-                <li key={post.slug}>
-                  <Link
-                    href={`/blog/${post.slug}`}
-                    className="group flex h-full flex-col rounded-3xl border border-line bg-paper p-7 transition-colors hover:border-boost/40"
-                  >
-                    <span className="meta-label text-boost">Boost Tales</span>
-                    <span className="heading mt-4 text-2xl group-hover:text-boost">
-                      {post.title.replace(/^Boost Tales:\s*/, "")}
-                    </span>
-                    <span className="mt-3 line-clamp-3 leading-relaxed text-ink-soft">{post.excerpt}</span>
-                    <span className="mt-auto pt-6 text-sm font-semibold">
-                      Read the story <span aria-hidden>→</span>
-                    </span>
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </Container>
-        </section>
-      )}
-
-      <div className="pt-24 sm:pt-32">
+      <div className="pt-14 sm:pt-20">
         <JoinSection />
       </div>
     </>

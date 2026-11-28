@@ -6,9 +6,9 @@ import { pillars, story, timeline } from "@/content/about";
 
 export function StorySection() {
   return (
-    <section className="pb-24 sm:pb-32">
+    <section className="pb-14 sm:pb-20">
       <Container size="wide">
-        <SectionHeading index={1} eyebrow="Our story" title="Built by students, since 2009" />
+        <SectionHeading title="Built by students, since 2009" />
 
         <div className="mt-12 grid gap-12 lg:grid-cols-12 lg:gap-10">
           <p className="heading text-2xl leading-snug text-ink sm:text-3xl lg:col-span-7">{story.lead}</p>
@@ -20,7 +20,7 @@ export function StorySection() {
         </div>
 
         {/* What we do */}
-        <ul className="mt-20 grid gap-px overflow-hidden rounded-3xl border border-line bg-line md:grid-cols-3">
+        <ul className="mt-12 grid gap-px overflow-hidden rounded-3xl border border-line bg-line md:grid-cols-3">
           {pillars.map((pillar, i) => (
             <li key={pillar.title} className="bg-surface">
               <Link href={pillar.href} className="group flex h-full flex-col p-8 transition-colors hover:bg-boost-soft/50">
@@ -36,7 +36,7 @@ export function StorySection() {
         </ul>
 
         {/* Timeline */}
-        <div className="mt-24">
+        <div className="mt-16">
           <p className="meta-label text-ink-muted">Milestones</p>
           <ol className="mt-6 grid gap-x-8 sm:grid-cols-2 lg:grid-cols-4">
             {timeline.map((item, i) => (

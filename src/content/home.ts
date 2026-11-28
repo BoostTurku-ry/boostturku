@@ -7,16 +7,17 @@ export const hero = {
   headline: {
     lead: "Where students",
     verb: "become",
-    /** The last word rotates; the first entry is the canonical headline. */
-    rotating: ["founders.", "builders.", "leaders.", "makers."],
+    /**
+     * The last word rotates; the first entry is the canonical headline. These three
+     * render within 0.25em of each other in the display font, and the slot is sized to
+     * the widest ("founders."), so "become" never moves (see HeroSection). Measure before
+     * adding words.
+     */
+    rotating: ["founders.", "pioneers.", "creators."],
   },
   body: "Boost Turku is a student-run community. We organise free events, accelerator programs and mentoring for students who want to build something of their own, with or without an idea yet.",
   primaryCta: { label: "Upcoming events", href: "/events" },
   secondaryCta: { label: "Become a member", href: "/get-involved" },
-  highlights: [
-    { value: "180+", label: "companies founded by alumni" },
-    { value: "€47M+", label: "raised by alumni startups" },
-  ],
   meta: {
     place: "Turku, Finland",
     coordinates: "60.4518° N · 22.2666° E",
@@ -122,7 +123,7 @@ export const programs: Program[] = [
     description:
       "Workshops, mentoring and founder nights that lower the threshold for women and underrepresented founders.",
     when: "Year-round",
-    href: "https://boosther.boostturku.com",
+    href: "/boosther",
     photo: photos.boostHerCelebration,
   },
 ];
@@ -133,6 +134,17 @@ export const stats: Stat[] = [
   { value: 66, prefix: "€", suffix: "M+", label: "Alumni company revenue in 2023" },
   { value: 60, suffix: "+", label: "Free events organised in 2026" },
 ];
+
+/** "Life at Boost": what a year with Boost looks like, beside the photo carousel. */
+export const lifeAtBoost = {
+  intro: "A year of events, programs and the people who make them happen. Here's roughly how it runs.",
+  year: [
+    { when: "All year", what: "Community breakfasts, founder nights and BoostHer workshops" },
+    { when: "March", what: "Startup Marathon: 42 hours from idea to pitch" },
+    { when: "Summer", what: "Startup Journey and OmaHomma, with Demo Day in August" },
+    { when: "Autumn", what: "The fall meeting elects next year's chairperson and board" },
+  ],
+};
 
 export const galleryPhotos: Photo[] = [
   photos.boostSignCelebration,

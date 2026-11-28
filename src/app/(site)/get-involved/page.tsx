@@ -21,13 +21,13 @@ export default function GetInvolvedPage() {
 
   return (
     <>
-      <PageHero eyebrow={involvedHero.eyebrow} title={involvedHero.title} intro={involvedHero.intro} photo={involvedHero.photo} />
+      <PageHero title={involvedHero.title} accent="everything else." intro={involvedHero.intro} photos={gallery.heroes.involved} />
 
       {/* Membership */}
-      <section id="join" className="scroll-mt-24 pb-24 sm:pb-32">
+      <section id="join" className="scroll-mt-24 pb-14 sm:pb-20">
         <Container size="wide" className="grid gap-14 lg:grid-cols-12 lg:gap-10">
           <div className="lg:col-span-5">
-            <SectionHeading index={1} eyebrow="Membership" title="What members get" layout="stack" />
+            <SectionHeading title="What members get" layout="stack" />
             <ul className="mt-10 border-t border-line">
               {memberPerks.map((perk, i) => (
                 <li key={perk.title} className="grid grid-cols-[2.5rem_1fr] gap-x-3 border-b border-line py-5">
@@ -58,17 +58,15 @@ export default function GetInvolvedPage() {
       </section>
 
       {/* Do more */}
-      <section className="pb-24 sm:pb-32">
+      <section className="pb-14 sm:pb-20">
         <Container size="wide">
           <PhotoMosaic photos={gallery.involved} />
         </Container>
       </section>
 
-      <section className="border-t border-line bg-surface py-24 sm:py-32">
+      <section className="border-t border-line bg-surface py-14 sm:py-20">
         <Container size="wide">
           <SectionHeading
-            index={2}
-            eyebrow="Do more"
             title="Help run Boost"
             intro="Boost is run entirely by students. Everything you see on this site is organised by people who started out just like you."
           />

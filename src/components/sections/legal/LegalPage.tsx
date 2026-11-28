@@ -31,7 +31,7 @@ export function LegalPage({ doc, related }: LegalPageProps) {
         </Container>
       </section>
 
-      <section className="border-t border-line pb-24 sm:pb-32">
+      <section className="border-t border-line pb-14 sm:pb-20">
         <Container size="wide" className="grid gap-12 pt-12 lg:grid-cols-12 lg:gap-10 lg:pt-16">
           <nav aria-label="On this page" className="lg:col-span-3">
             <div className="lg:sticky lg:top-28">

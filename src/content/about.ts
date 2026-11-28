@@ -2,8 +2,8 @@ import { photos } from "./photos";
 import type { Person } from "./types";
 
 export const aboutHero = {
-  eyebrow: "About Boost",
   title: "A student-run home for first-time founders.",
+  accent: "first-time founders.",
   intro:
     "Boost Turku is a non-profit entrepreneurship society run by students in Turku. Since 2009 we've helped students meet each other, test ideas and start companies, and everything we do is free.",
   photo: photos.boostSignSeaside,
@@ -95,12 +95,14 @@ export const director: Person = {
   name: "Lauri Koittola",
   role: "Executive Director & Head Coach",
   photo: "/images/people/lauri-koittola.jpg",
+  // Tall studio shot with the head at the very top.
+  focus: "50% 0%",
   email: "lauri@boostturku.com",
   linkedin: "https://www.linkedin.com/in/laurikoittola/",
 };
 
 export const partners = {
-  /** Main partners. Logos are white versions for the burgundy partners section. */
+  /** Key partners. Logos are white versions for the burgundy partners section. */
   key: [
     { name: "City of Turku", logo: "/images/partners/city-of-turku.png", href: "https://www.turku.fi" },
     { name: "Business Turku", logo: "/images/partners/business-turku.png", href: "https://businessturku.fi" },
@@ -109,6 +111,8 @@ export const partners = {
   other: [
     { name: "University of Turku", logo: "/images/partners/university-of-turku.png", href: "https://www.utu.fi" },
     { name: "Turku University of Applied Sciences", logo: "/images/partners/turku-amk.png", href: "https://www.tuas.fi" },
+    // Logo: Wikimedia Commons "Åbo Akademi logo.svg" (public domain), recoloured white and set side by side.
+    { name: "Åbo Akademi University", logo: "/images/partners/abo-akademi.png", href: "https://www.abo.fi/en/" },
   ],
 };
 

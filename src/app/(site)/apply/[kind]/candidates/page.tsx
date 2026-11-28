@@ -19,7 +19,7 @@ export default async function CandidatesPage({ params }: PageProps<"/apply/[kind
   const { kind } = await params;
   if (kind !== "chair") notFound();
   return (
-    <section className="pt-28 pb-24 sm:pt-32 sm:pb-32">
+    <section className="pt-28 pb-14 sm:pt-32 sm:pb-20">
       <Container size="wide">
         <p className="meta-label flex items-center gap-2.5 text-ink-muted">
           <span aria-hidden className="size-1.5 rounded-full bg-boost" />

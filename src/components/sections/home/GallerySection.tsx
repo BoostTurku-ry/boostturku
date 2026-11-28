@@ -2,9 +2,11 @@
 
 import { getImageProps } from "next/image";
 import DepthCarousel from "@/components/reactbits/DepthCarousel";
+import { ButtonLink } from "@/components/ui/Button";
 import { Container } from "@/components/ui/Container";
+import { DEFAULT_FOCUS } from "@/components/ui/Photo";
 import { SectionHeading } from "@/components/ui/SectionHeading";
-import { galleryPhotos } from "@/content/home";
+import { galleryPhotos, lifeAtBoost } from "@/content/home";
 import { useTheme } from "@/hooks/useTheme";
 
 // DepthCarousel renders plain <img>; route each photo through the Next image
@@ -12,6 +14,7 @@ import { useTheme } from "@/hooks/useTheme";
 const items = galleryPhotos.map((photo) => ({
   image: getImageProps({ src: photo.src, alt: photo.alt, width: 640, height: 800, quality: 75 }).props.src,
   alt: photo.alt,
+  focus: photo.focus ?? DEFAULT_FOCUS,
 }));
 
 /** Life at Boost: a 3D depth carousel beside the section intro. */
@@ -19,18 +22,24 @@ export function GallerySection() {
   const theme = useTheme();
 
   return (
-    <section className="overflow-hidden border-t border-line bg-surface py-24 sm:py-32">
+    <section className="overflow-hidden border-t border-line bg-surface py-14 sm:py-20">
       <Container size="wide" className="grid items-center gap-10 lg:grid-cols-12 lg:gap-10">
-        <SectionHeading
-          index={5}
-          eyebrow="Community"
-          layout="stack"
-          className="lg:col-span-4"
-          title="Life at Boost"
-          intro="A year of events, programs and the people who make them happen. Drag, scroll or use the arrows to flip through."
-        />
+        <div className="lg:col-span-4">
+          <SectionHeading layout="stack" title="Life at Boost" intro={lifeAtBoost.intro} />
+          <dl className="mt-8 border-t border-line">
+            {lifeAtBoost.year.map((item) => (
+              <div key={item.when} className="grid grid-cols-[5.5rem_1fr] gap-4 border-b border-line py-3.5">
+                <dt className="meta-label pt-1 text-boost">{item.when}</dt>
+                <dd className="leading-snug text-ink">{item.what}</dd>
+              </div>
+            ))}
+          </dl>
+          <ButtonLink href="/events" variant="outline" arrow className="mt-8">
+            See what&apos;s coming up
+          </ButtonLink>
+        </div>
 
-        <div className="h-[26rem] sm:h-[30rem] lg:col-span-8">
+        <div className="h-[25rem] sm:h-[27rem] lg:col-span-8">
           <DepthCarousel
             items={items}
             cardWidth={280}

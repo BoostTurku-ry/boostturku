@@ -6,16 +6,14 @@ import { ecosystem, partners } from "@/content/about";
 export function PartnersSection() {
   return (
     <section data-header-dark className="bg-night text-white">
-      <Container size="wide" className="py-24 sm:py-32">
+      <Container size="wide" className="py-14 sm:py-20">
         <SectionHeading
-          index={3}
           tone="paper"
-          eyebrow="Partners"
           title="Free for students, thanks to them"
           intro="Our partners fund Boost's work, which is why every event and program costs participants nothing and we never take equity."
         />
 
-        <p className="meta-label mt-16 text-white/45">Main partners</p>
+        <p className="meta-label mt-16 text-white/45">Key partners</p>
         <ul className="mt-4 grid gap-px overflow-hidden rounded-3xl border border-white/10 bg-white/10 sm:grid-cols-3">
           {partners.key.map((p) => (
             <PartnerTile key={p.name} partner={p} size="lg" />
@@ -23,7 +21,7 @@ export function PartnersSection() {
         </ul>
 
         <p className="meta-label mt-10 text-white/45">Also supported by</p>
-        <ul className="mt-4 grid grid-cols-2 gap-px overflow-hidden rounded-2xl border border-white/10 bg-white/10">
+        <ul className="mt-4 grid gap-px overflow-hidden rounded-2xl sm:grid-cols-3 border border-white/10 bg-white/10">
           {partners.other.map((p) => (
             <PartnerTile key={p.name} partner={p} size="sm" />
           ))}

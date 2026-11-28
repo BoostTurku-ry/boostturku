@@ -58,6 +58,7 @@ export const photos = {
     alt: "Founders and guests at a Boost x Female Founder evening in a historic venue",
     width: 1378,
     height: 2000,
+    focus: "50% 45%",
   },
   boostHerBrunch: {
     src: "/images/community/boosther-brunch.jpg",
@@ -76,24 +77,28 @@ export const photos = {
     alt: "Students sitting on steps, one asking a question into a microphone",
     width: 2000,
     height: 1333,
+    focus: "50% 5%",
   },
   boostHerHosts: {
     src: "/images/community/boosther-hosts.jpg",
     alt: "Two Boost volunteers in Boost T-shirts holding snacks for guests",
     width: 1333,
     height: 2000,
+    focus: "50% 18%",
   },
   eventSelfie: {
     src: "/images/community/event-selfie.jpg",
     alt: "A Boost volunteer smiling into a selfie during an event",
     width: 1336,
     height: 2000,
+    focus: "50% 40%",
   },
   breakfastPrep: {
     src: "/images/community/breakfast-prep.jpg",
     alt: "Boost volunteers preparing food for a community breakfast",
     width: 1336,
     height: 2000,
+    focus: "50% 25%",
   },
   thumbsUp: {
     src: "/images/community/thumbs-up.jpg",
@@ -118,6 +123,7 @@ export const photos = {
     alt: "Students chatting at a Boost stand",
     width: 2000,
     height: 1333,
+    focus: "50% 20%",
   },
   boostBar: {
     src: "/images/community/boost-bar.jpg",

@@ -16,7 +16,7 @@ export default async function HomePage() {
 
   return (
     <>
-      <HeroSection nextEvent={upcoming?.[0]} />
+      <HeroSection />
       <AlumniStrip />
       <ManifestoSection />
       <WaysInSection />
@@ -24,8 +24,8 @@ export default async function HomePage() {
       <EventsSection upcoming={upcoming} recent={recent} />
       <GallerySection />
       <ImpactSection />
-      <FaqSection items={faq} index={7} />
-      <JoinSection index={8} />
+      <FaqSection items={faq} />
+      <JoinSection />
     </>
   );
 }

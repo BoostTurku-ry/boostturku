@@ -17,16 +17,16 @@ export const metadata: Metadata = {
 export default function AboutPage() {
   return (
     <>
-      <PageHero eyebrow={aboutHero.eyebrow} title={aboutHero.title} intro={aboutHero.intro} photo={aboutHero.photo} />
+      <PageHero layout="wide" title={aboutHero.title} accent={aboutHero.accent} intro={aboutHero.intro} photos={[aboutHero.photo]} />
       <StorySection />
-      <section className="pb-24 sm:pb-32">
+      <section className="pb-14 sm:pb-20">
         <Container size="wide">
           <PhotoMosaic photos={gallery.about} />
         </Container>
       </section>
       <TeamSection />
       <PartnersSection />
-      <div className="pt-24 sm:pt-32">
+      <div className="pt-14 sm:pt-20">
         <JoinSection />
       </div>
     </>

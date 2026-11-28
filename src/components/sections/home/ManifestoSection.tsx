@@ -6,14 +6,9 @@ import { manifesto } from "@/content/home";
 /** Editorial statement that resolves word by word as you scroll. */
 export function ManifestoSection() {
   return (
-    <section className="py-24 sm:py-32">
+    <section className="py-14 sm:py-20">
       <Container size="wide">
-        <div className="meta-label flex items-center gap-4 border-t border-line pt-4 text-ink-muted">
-          <span className="text-boost">(01)</span>
-          <span>About Boost</span>
-        </div>
-
-        <div className="mt-10 grid gap-12 lg:grid-cols-12 lg:gap-10">
+        <div className="grid gap-12 lg:grid-cols-12 lg:gap-10">
           <div className="lg:col-span-9">
             <ScrollReveal
               baseOpacity={0.12}
