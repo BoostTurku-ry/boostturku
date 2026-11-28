@@ -19,6 +19,9 @@ export interface FlowingMenuItem {
   image?: string;
   marquee?: string;
   meta?: string;
+  // PATCH(boost): per-row band colours, so one row (BoostHer) can use its own palette.
+  marqueeBgColor?: string;
+  marqueeTextColor?: string;
 }
 
 export interface FlowingMenuProps {
@@ -675,7 +678,10 @@ function FlowingMenu({
               <div
                 className={BAND}
                 aria-hidden="true"
-                style={{ backgroundColor: marqueeBgColor, color: marqueeTextColor }}
+                style={{
+                  backgroundColor: item.marqueeBgColor ?? marqueeBgColor,
+                  color: item.marqueeTextColor ?? marqueeTextColor
+                }}
                 ref={node => {
                   rows.current[index] = { ...rows.current[index], band: node };
                 }}

@@ -17,14 +17,14 @@ export function ProgramsSection() {
     image: program.photo.src,
     marquee: program.tagline,
     meta: showMeta ? program.when : undefined,
+    // BoostHer gets its own light pink band; the rest stay Boost red.
+    ...(program.slug === "boosther" ? { marqueeBgColor: "var(--color-her)", marqueeTextColor: "#25031a" } : {}),
   }));
 
   return (
-    <section className="border-t border-line bg-surface py-24 sm:py-32">
+    <section className="border-t border-line bg-surface py-14 sm:py-20">
       <Container size="wide">
         <SectionHeading
-          index={3}
-          eyebrow="Programs"
           title="From first idea to Demo Day"
           intro="Structured programs led by experienced coaches. All free, with no equity taken."
           action={
