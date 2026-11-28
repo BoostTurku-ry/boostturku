@@ -117,7 +117,7 @@ The Boost board uses them to select participants or candidates and to contact yo
       title: "Events and registration",
       body: `Our events are published on [lu.ma](https://lu.ma/boost). If you register for an event there, Luma processes your registration under [its own privacy policy](https://luma.com/privacy-policy), and as the organiser we see the details you give in the registration (typically your name and email) so we can run the event. We use them only for that event and related practical messages.
 
-Links to Instagram, LinkedIn, Facebook, Telegram and other services take you to those platforms, which handle your data under their own policies.`,
+Links to Instagram, LinkedIn, Facebook, Telegram, WhatsApp and other services take you to those platforms, which handle your data under their own policies.`,
     },
     {
       id: "photos",

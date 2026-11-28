@@ -19,15 +19,16 @@ export const site = {
     membership: "/get-involved",
     ideaForm:
       "https://docs.google.com/forms/d/e/1FAIpQLSd_ULN2AkSZfvyD5y9d382OG2rkIfactWh3MfMhYMD3QQ9xXw/viewform",
-    boostHer: "https://boosther.boostturku.com",
+    boostHer: "/boosther",
   },
-  /** Community chats. Discord has no invite yet: set `href` when the server opens. */
+  /** Community chats: the Telegram channel for news, the WhatsApp community for chatting. */
   community: {
-    telegram: { label: "Telegram", href: "https://t.me/boostturku" as string | null },
-    discord: { label: "Discord", href: null as string | null },
+    telegram: { label: "Telegram", href: "https://t.me/boostturku" },
+    whatsapp: { label: "WhatsApp", href: "https://chat.whatsapp.com/HgOoLSRPEUO76IaJCTpQlo" },
   },
   socials: [
     { label: "Telegram", href: "https://t.me/boostturku", external: true },
+    { label: "WhatsApp community", href: "https://chat.whatsapp.com/HgOoLSRPEUO76IaJCTpQlo", external: true },
     { label: "Instagram", href: "https://www.instagram.com/boostturku/", external: true },
     { label: "LinkedIn", href: "https://www.linkedin.com/company/boostturku/", external: true },
     { label: "Facebook", href: "https://www.facebook.com/boostturku", external: true },
@@ -39,8 +40,7 @@ export const mainNav: NavLink[] = [
   { label: "Programs", href: "/programs" },
   { label: "Events", href: "/events" },
   { label: "Alumni", href: "/alumni" },
-  { label: "Stories", href: "/blog" },
-  { label: "BoostHer", href: "https://boosther.boostturku.com", external: true },
+  { label: "BoostHer", href: "/boosther" },
 ];
 
 export const footerNav: NavLink[] = [
@@ -48,7 +48,7 @@ export const footerNav: NavLink[] = [
   { label: "Programs", href: "/programs" },
   { label: "Events", href: "/events" },
   { label: "Alumni", href: "/alumni" },
-  { label: "Stories", href: "/blog" },
+  { label: "BoostHer", href: "/boosther" },
   { label: "Get involved", href: "/get-involved" },
   { label: "Contact", href: "/contact" },
 ];

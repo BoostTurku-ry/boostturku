@@ -21,7 +21,6 @@ This folder is **not** covered by the repository's MIT licence.
 | `ScrollReveal` | Manifesto text that resolves word by word on scroll | `gsap` |
 | `FlowingMenu` | Programs list with hover marquee band | `@hugeicons/*` |
 | `RotatingText` | Rotating last word of the hero headline | `motion` |
-| `Noise` | Very faint film grain behind the hero | — |
 | `DepthCarousel` | "Life at Boost" 3D photo carousel | `gsap` |
 
 To add another: `curl https://reactbits.dev/r/<Name>-TS-TW.json` and copy `files[0].content` here.
